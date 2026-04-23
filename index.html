@@ -25,6 +25,7 @@
     *{box-sizing:border-box}
     body{
       margin:0;
+      position:relative;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background: radial-gradient(1200px 600px at 20% 0%, rgba(216,30,30,.16), transparent 55%),
                   radial-gradient(900px 600px at 90% 10%, rgba(216,30,30,.10), transparent 60%),
@@ -32,8 +33,21 @@
       color:var(--text);
       line-height:1.55;
     }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:url("/assets/logo/trustware-logo.png");
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:min(50vw, 620px) auto;
+      opacity:.075;
+      filter:saturate(.9) brightness(.9);
+      z-index:0;
+    }
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px; position:relative; z-index:1}
     header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0 26px}
     .brand{display:flex; align-items:center; gap:12px}
     .brand img{height:46px; width:auto}
@@ -97,6 +111,20 @@
     }
     .section h3{margin:0 0 10px; font-size:16px}
     ul{margin:10px 0 0 18px; color:var(--muted)}
+    .miniGrid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .miniCard{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.018);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .miniCard strong{display:block;margin-bottom:6px}
+    .miniCard p{margin:0;color:var(--muted)}
     .footer{
       margin-top:26px;
       display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
@@ -107,8 +135,14 @@
     @media (max-width: 980px){
       h1{font-size:36px}
       .card{grid-column: span 12}
+      .miniGrid{grid-template-columns:1fr}
       nav{flex-wrap:wrap; justify-content:flex-end}
       .brand img{height:40px}
+      body::before{
+        background-position:center center;
+        background-size:min(82vw, 420px) auto;
+        opacity:.055;
+      }
     }
   </style>
 </head>
@@ -121,57 +155,73 @@
         <div class="name">Trustware Technologies</div>
       </div>
       <nav>
-        <a href="/devvault">DevVault</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
+        <a href="/devvault/">DevVault</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="mailto:sales@trustware.dev">Contact</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <div class="kicker">Infrastructure-grade integrity tooling</div>
-        <h1>Authority-driven software integrity.</h1>
+        <div class="kicker">DevVault by Trustware Technologies</div>
+        <h1>Backup integrity for work that cannot be replaced.</h1>
         <p class="sub">
-          Trustware Technologies builds disciplined systems that protect workflows, reduce tampering risk, and keep operations enforceable.
-          Our first product is DevVault.
+          DevVault helps developers, operators, and small teams protect important work with disciplined backup,
+          restore, scan, signed licensing, and Business NAS governance.
         </p>
 
         <div class="ctaRow">
-          <a class="btn btnPrimary" href="/devvault">Explore DevVault</a>
-          <a class="btn" href="/terms">Terms</a>
+          <a class="btn btnPrimary" href="/devvault/">View DevVault plans</a>
+          <a class="btn" href="mailto:sales@trustware.dev">Talk to sales</a>
         </div>
       </section>
 
       <div class="grid">
         <div class="card">
-          <h2>Built for discipline</h2>
-          <p>Minimal moving parts. Clear rules. Strong enforcement without noise.</p>
+          <h2>Protect local work</h2>
+          <p>Back up critical files and projects with safety checks before protected actions run.</p>
         </div>
         <div class="card">
-          <h2>Local-first</h2>
-          <p>DevVault is designed to operate offline without giving up control.</p>
+          <h2>Restore with confidence</h2>
+          <p>Keep snapshot history and restore paths clear when work needs to be recovered.</p>
         </div>
         <div class="card">
-          <h2>Operational maturity</h2>
-          <p>Hardened baseline, auditability, and secure delivery patterns.</p>
+          <h2>Govern teams</h2>
+          <p>Business plans add seat visibility, admin controls, and NAS-first network vault authority.</p>
         </div>
       </div>
 
       <section class="section">
-        <h3>Security architecture (subtle)</h3>
+        <h3>Launch-ready commercial path</h3>
         <ul>
-          <li>Verified payment events prior to license delivery</li>
-          <li>Idempotent issuance to prevent duplicates</li>
-          <li>Signed offline license file model</li>
-          <li>Audit logging and anomaly detection practices</li>
+          <li>Core, Pro, and Business annual seat subscriptions</li>
+          <li>Stripe Checkout purchase flow with signed `.dvlic` license delivery</li>
+          <li>Offline-capable desktop licensing with server validation lifecycle</li>
+          <li>Business NAS requirement documented before checkout</li>
         </ul>
+      </section>
+
+      <section class="section">
+        <h3>Contact</h3>
+        <div class="miniGrid">
+          <div class="miniCard">
+            <strong>Sales</strong>
+            <p><a href="mailto:sales@trustware.dev">sales@trustware.dev</a> for plan, seat, and Business NAS questions.</p>
+          </div>
+          <div class="miniCard">
+            <strong>Support</strong>
+            <p><a href="mailto:support@trustware.dev">support@trustware.dev</a> for license delivery or product support.</p>
+          </div>
+        </div>
       </section>
 
       <div class="footer">
         <div>© <span id="y"></span> Trustware Technologies • TSW Technologies LLC</div>
         <div>
-          <a href="/privacy">Privacy</a> ·
-          <a href="/terms">Terms</a>
+          <a href="mailto:sales@trustware.dev">Contact</a> ·
+          <a href="/privacy/">Privacy</a> ·
+          <a href="/terms/">Terms</a>
         </div>
       </div>
     </main>

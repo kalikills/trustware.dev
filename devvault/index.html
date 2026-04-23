@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevVault - Trustware Technologies</title>
+  <meta name="description" content="DevVault launch tiers: Core, Pro, and Business annual seat subscriptions with signed offline licensing and NAS-first Business protection." />
+
+  <link rel="icon" href="/assets/icons/favicon.ico?v=13">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/icon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+
+  <style>
+    :root{
+      --bg:#09090b;
+      --panel:#111114;
+      --panel-strong:#17171c;
+      --text:#f0eef2;
+      --muted:#bdb8c2;
+      --soft:#8e8794;
+      --border:#2b2830;
+      --red:#d81e1e;
+      --red-soft:rgba(216,30,30,.16);
+      --green:#35d168;
+      --gold:#f2cf45;
+      --shadow:0 18px 55px rgba(0,0,0,.48);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      position:relative;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1000px 520px at 50% 0%, rgba(216,30,30,.20), transparent 58%),
+        linear-gradient(180deg, #16080d 0%, var(--bg) 34%, #050506 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:url("/assets/logo/trustware-logo.png");
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:min(54vw, 650px) auto;
+      opacity:.075;
+      filter:saturate(.9) brightness(.86);
+      z-index:0;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:30px 18px 70px;position:relative;z-index:1}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 34px}
+    .brand{display:flex;align-items:center;gap:13px}
+    .brand img{height:48px;width:auto}
+    .brand .name{font-weight:750;letter-spacing:.3px}
+    nav{display:flex;gap:16px;color:var(--muted);font-size:15px}
+    nav a{padding:8px 10px;border:1px solid transparent;border-radius:12px}
+    nav a:hover{border-color:var(--border);background:rgba(255,255,255,.03)}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.09);
+      background:
+        linear-gradient(135deg, rgba(216,30,30,.18), rgba(255,255,255,.025) 48%, rgba(0,0,0,.28)),
+        rgba(255,255,255,.025);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:44px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:auto -120px -180px auto;
+      width:520px;
+      height:520px;
+      background:radial-gradient(circle, rgba(216,30,30,.22), transparent 65%);
+      pointer-events:none;
+    }
+    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+    h1{margin:12px 0 12px;font-size:clamp(44px,7vw,78px);line-height:.95;letter-spacing:-.05em}
+    .hero .sub{max-width:760px;margin:0;color:var(--muted);font-size:clamp(18px,2.2vw,24px)}
+    .heroFacts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .fact{
+      border:1px solid rgba(255,255,255,.1);
+      background:rgba(0,0,0,.18);
+      color:var(--muted);
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+      font-weight:700;
+    }
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 18px;
+      border-radius:15px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .btnPrimary{
+      border-color:rgba(216,30,30,.62);
+      background:linear-gradient(180deg, rgba(216,30,30,.26), rgba(216,30,30,.11));
+    }
+    .section{margin-top:28px}
+    .sectionHead{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}
+    .section h2{margin:0;font-size:clamp(28px,4vw,42px);line-height:1;letter-spacing:-.035em}
+    .sectionLead{max-width:720px;margin:8px 0 0;color:var(--muted)}
+    .tierGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tier{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    .tierBusiness{
+      border-color:rgba(216,30,30,.48);
+      box-shadow:0 0 0 1px rgba(216,30,30,.12) inset;
+    }
+    .tierTop{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .tier h3{margin:0;font-size:23px}
+    .tag{border:1px solid rgba(255,255,255,.1);color:var(--muted);border-radius:999px;padding:5px 8px;font-size:12px;font-weight:800}
+    .price{margin:18px 0 8px;font-size:40px;font-weight:900;letter-spacing:-.04em}
+    .price span{display:block;margin-top:2px;font-size:13px;font-weight:800;letter-spacing:.02em;color:var(--muted)}
+    .tier ul{margin:12px 0 20px 18px;color:var(--muted);padding:0}
+    .tier li{margin:8px 0}
+    .tier .btn{margin-top:auto;width:100%}
+    .tierNote{margin:10px 0 0;color:var(--soft);font-size:13px}
+    .tierNote a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    .nasNotice{
+      border:1px solid rgba(242,207,69,.32);
+      background:linear-gradient(135deg, rgba(242,207,69,.10), rgba(216,30,30,.08));
+      border-radius:var(--radius);
+      padding:20px;
+      color:var(--muted);
+    }
+    .nasNotice strong{display:block;color:var(--gold);font-size:18px;margin-bottom:6px}
+    .evidenceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    figure{
+      margin:0;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.025);
+      border-radius:var(--radius);
+      box-shadow:0 12px 36px rgba(0,0,0,.28);
+    }
+    figure img{display:block;width:100%;height:auto;background:#050506}
+    figcaption{padding:14px 16px;color:var(--muted);font-size:14px}
+    figcaption strong{display:block;color:var(--text);font-size:16px;margin-bottom:4px}
+    .flowGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .flowStep{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.025);
+      border-radius:18px;
+      padding:16px;
+      color:var(--muted);
+    }
+    .flowStep strong{display:block;color:var(--text);margin-bottom:6px}
+    .buyerNote{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.025);
+      border-radius:var(--radius);
+      padding:18px;
+      color:var(--muted);
+    }
+    .buyerNote strong{color:var(--text)}
+    .checkoutStatus{
+      border:1px solid rgba(216,30,30,.34);
+      background:rgba(216,30,30,.08);
+      border-radius:var(--radius);
+      padding:18px;
+      color:var(--muted);
+    }
+    .checkoutStatus strong{color:var(--text)}
+    .footer{
+      margin-top:34px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:13px;
+      padding-top:18px;
+    }
+    .footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    @media (max-width: 980px){
+      .hero{padding:30px 22px}
+      .tierGrid,.evidenceGrid,.flowGrid{grid-template-columns:1fr}
+      figure img{height:auto}
+      nav{flex-wrap:wrap;justify-content:flex-end}
+      body::before{background-size:min(84vw, 430px) auto;opacity:.055}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <a href="/"><img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" /></a>
+        <div class="name">Trustware Technologies</div>
+      </div>
+      <nav>
+        <a href="/devvault/">DevVault</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Launch authority &bull; Annual seat subscriptions</div>
+        <h1>DevVault</h1>
+        <p class="sub">
+          Development integrity tooling with signed offline licensing, protected backup and restore workflows,
+          and Business-grade NAS governance for teams that need shared vault authority.
+        </p>
+        <div class="heroFacts">
+          <div class="fact">Core: $249 / seat / year</div>
+          <div class="fact">Pro: $499 / seat / year</div>
+          <div class="fact">Business: $999 / seat / year</div>
+          <div class="fact">Business requires NAS / network share</div>
+        </div>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="#pricing">View launch tiers</a>
+          <a class="btn" href="#screenshots">See real screenshots</a>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="sectionHead">
+          <div>
+            <h2>Launch Pricing</h2>
+            <p class="sectionLead">Locked pricing follows the DevVault launch authority: annual, per-seat subscriptions with Stripe subscription quantity as seat authority.</p>
+          </div>
+        </div>
+
+        <div class="tierGrid">
+          <article class="tier">
+            <div class="tierTop">
+              <h3>Core</h3>
+              <span class="tag">Individual protection</span>
+            </div>
+            <div class="price">$249<span>per seat / year</span></div>
+            <ul>
+              <li>Backup and restore engine</li>
+              <li>Snapshot system and backup queue</li>
+              <li>Trustware safety checks</li>
+              <li>Full scan system</li>
+              <li>Removable vault workflows supported</li>
+            </ul>
+            <a class="btn btnPrimary" href="https://buy.stripe.com/28EfZaej6a5C27DcxH77O0b" data-checkout="core">Start Core Checkout</a>
+          </article>
+
+          <article class="tier">
+            <div class="tierTop">
+              <h3>Pro</h3>
+              <span class="tag">Advanced recovery evidence</span>
+            </div>
+            <div class="price">$499<span>per seat / year</span></div>
+            <ul>
+              <li>Everything in Core</li>
+              <li>Advanced scan reports</li>
+              <li>Snapshot comparison</li>
+              <li>Recovery audit reports</li>
+              <li>Report export workflows</li>
+            </ul>
+            <a class="btn btnPrimary" href="https://buy.stripe.com/fZu9AM3Es4LidQl1T377O0c" data-checkout="pro">Start Pro Checkout</a>
+          </article>
+
+          <article class="tier tierBusiness">
+            <div class="tierTop">
+              <h3>Business</h3>
+              <span class="tag">NAS-first governance</span>
+            </div>
+            <div class="price">$999<span>per seat / year</span></div>
+            <ul>
+              <li>Everything in Pro</li>
+              <li>Organization audit and governance visibility</li>
+              <li>Seat administration tools</li>
+              <li>Fleet protection state and NAS health</li>
+              <li>Requires NAS, SMB UNC path, or network share</li>
+            </ul>
+            <a class="btn btnPrimary" href="https://buy.stripe.com/8x228k1wk7XueUpdBL77O0d" data-checkout="business">Start Business Checkout (NAS required)</a>
+            <p class="tierNote">Not sure your NAS is ready? <a href="mailto:sales@trustware.dev?subject=DevVault%20Business%20NAS%20readiness">Contact sales first</a>.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="nasNotice">
+          <strong>Business is NAS-first.</strong>
+          Business protection requires a customer-managed NAS or network share. DevVault does not operate customer backup storage, and Business backup is blocked until a valid network vault target is configured. If you are unsure whether your environment is ready, contact <a href="mailto:sales@trustware.dev">sales@trustware.dev</a> before checkout.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="buyerNote">
+          <strong>What happens after checkout:</strong>
+          Checkout creates an annual subscription contract. DevVault then issues a signed `.dvlic` license through licensing@trustware.dev. Business customers must have a NAS or network share ready because Business runtime enforcement requires an admin-configured network vault.
+        </div>
+      </section>
+
+      <section class="section" id="screenshots">
+        <div class="sectionHead">
+          <div>
+            <h2>Real Product Screenshots</h2>
+            <p class="sectionLead">These are local DevVault runtime captures from the current Business/NAS validation surface, captured during April 2026 launch validation. They are not mockups.</p>
+          </div>
+        </div>
+
+        <div class="evidenceGrid">
+          <figure>
+            <img src="/assets/img/devvault/dashboard-protected.png" alt="DevVault protected dashboard with NAS target visible" loading="lazy">
+            <figcaption><strong>Protected dashboard</strong>Signed license state, seat count, NAS target, and protected runtime status visible in the desktop surface.</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/devvault/pro-tools-menu.png" alt="DevVault Pro tools menu with advanced scan, comparison, and audit options" loading="lazy">
+            <figcaption><strong>Pro tools</strong>Advanced scan reporting, snapshot comparison, and recovery audit tools exposed behind Pro entitlements.</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/devvault/nas-configuration.png" alt="DevVault Business NAS configuration screen" loading="lazy">
+            <figcaption><strong>Business NAS configuration</strong>Business admins detect, test, save, and initialize the authoritative UNC network vault target.</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/devvault/fleet-status.png" alt="DevVault Business dashboard showing fleet seat and NAS health status" loading="lazy">
+            <figcaption><strong>Fleet visibility</strong>Business dashboard shows seats used, seats protected to NAS, NAS health, and capacity state.</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/img/devvault/nas-required.png" alt="DevVault Business NAS setup required prompt" loading="lazy">
+            <figcaption><strong>NAS enforcement</strong>Business backup refuses to run until an admin-configured NAS or network share is present.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="sectionHead">
+          <div>
+            <h2>License Delivery</h2>
+            <p class="sectionLead">DevVault launch provisioning is contract-driven. Stripe Checkout creates the subscription contract, then signed license authority is issued through the production backend.</p>
+          </div>
+        </div>
+        <div class="flowGrid">
+          <div class="flowStep"><strong>1. Stripe Checkout</strong>Public purchase starts from a Stripe Checkout-created subscription.</div>
+          <div class="flowStep"><strong>2. Server issuance</strong>The webhook signs a `.dvlic` license and records authority server-side.</div>
+          <div class="flowStep"><strong>3. Email delivery</strong>Production delivery uses licensing@trustware.dev through Zoho SMTP.</div>
+          <div class="flowStep"><strong>4. Runtime enforcement</strong>The desktop enforces signed entitlements at protected action boundaries.</div>
+        </div>
+      </section>
+
+      <section class="section" id="checkout-status">
+        <div class="checkoutStatus">
+          <strong>Checkout wiring status:</strong>
+          Core, Pro, and Business buttons point to live Stripe Checkout payment links for the locked annual seat prices. Business requires NAS/network-share readiness before protected backup can run.
+        </div>
+      </section>
+    </main>
+
+    <div class="footer">
+      <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
+      <div>
+        <a href="/privacy/">Privacy</a> &middot;
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const checkoutLinks = {
+      core: "https://buy.stripe.com/28EfZaej6a5C27DcxH77O0b",
+      pro: "https://buy.stripe.com/fZu9AM3Es4LidQl1T377O0c",
+      business: "https://buy.stripe.com/8x228k1wk7XueUpdBL77O0d"
+    };
+
+    const checkoutLabels = {
+      core: "Start Core Checkout",
+      pro: "Start Pro Checkout",
+      business: "Start Business Checkout (NAS required)"
+    };
+
+    for (const [tier, url] of Object.entries(checkoutLinks)) {
+      const link = document.querySelector(`[data-checkout="${tier}"]`);
+      if (!link || !url) {
+        continue;
+      }
+
+      link.href = url;
+      link.textContent = checkoutLabels[tier];
+    }
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
