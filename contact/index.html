@@ -43,6 +43,39 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:15px;border:1px solid var(--border);background:rgba(255,255,255,.035);color:var(--text);font-weight:800;letter-spacing:.2px}
     .btnPrimary{border-color:rgba(216,30,30,.62);background:linear-gradient(180deg,rgba(216,30,30,.26),rgba(216,30,30,.11))}
     .section{margin-top:28px}
+    .mailFallback{
+      display:none;
+      margin-top:16px;
+      padding:14px 16px;
+      border:1px solid rgba(216,30,30,.28);
+      border-radius:18px;
+      background:rgba(216,30,30,.08);
+      color:var(--muted)
+    }
+    .mailFallback.show{display:block}
+    .mailFallback strong{color:var(--text)}
+    .mailRow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .mailValue{
+      display:inline-flex;
+      align-items:center;
+      min-height:42px;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      font-weight:700
+    }
+    .copyBtn{
+      cursor:pointer;
+      min-height:42px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      font-weight:700
+    }
     .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
     .card{padding:22px}
     .card h2{margin:0 0 10px;font-size:26px;letter-spacing:-.03em}
@@ -85,6 +118,14 @@
         <div class="ctaRow">
           <a class="btn btnPrimary" href="mailto:sales@trustware.dev?subject=DevVault%20Sales%20Inquiry" data-mailto="sales">Email sales</a>
           <a class="btn" href="/devvault/">Review DevVault plans</a>
+        </div>
+        <div class="mailFallback" id="salesFallback">
+          <strong>Email fallback</strong>
+          <div>If your browser does not open a mail app, copy the sales address below.</div>
+          <div class="mailRow">
+            <div class="mailValue" id="salesEmailValue">sales@trustware.dev</div>
+            <button class="copyBtn" type="button" id="copySalesEmail">Copy email</button>
+          </div>
         </div>
       </section>
 
@@ -149,6 +190,9 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+    const salesFallback = document.getElementById("salesFallback");
+    const copySalesEmail = document.getElementById("copySalesEmail");
+    const salesEmailValue = document.getElementById("salesEmailValue");
 
     for (const link of document.querySelectorAll('a[href^="mailto:"]')) {
       link.addEventListener("click", (event) => {
@@ -158,7 +202,22 @@
         }
 
         event.preventDefault();
+        if (link.dataset.mailto === "sales" && salesFallback) {
+          salesFallback.classList.add("show");
+        }
         window.location.href = href;
+      });
+    }
+
+    if (copySalesEmail && salesEmailValue) {
+      copySalesEmail.addEventListener("click", async () => {
+        const email = salesEmailValue.textContent?.trim() || "sales@trustware.dev";
+        try {
+          await navigator.clipboard.writeText(email);
+          copySalesEmail.textContent = "Copied";
+        } catch {
+          copySalesEmail.textContent = email;
+        }
       });
     }
   </script>
