@@ -83,7 +83,7 @@
         <h1>Talk to the right team.</h1>
         <p class="sub">Use this page to reach Trustware Technologies for company, product, support, licensing, or privacy inquiries. DevVault is our current product, and sales can route broader conversations from there.</p>
         <div class="ctaRow">
-          <a class="btn btnPrimary" href="mailto:sales@trustware.dev?subject=DevVault%20Sales%20Inquiry">Email sales</a>
+          <a class="btn btnPrimary" href="mailto:sales@trustware.dev?subject=DevVault%20Sales%20Inquiry" data-mailto="sales">Email sales</a>
           <a class="btn" href="/devvault/">Review DevVault plans</a>
         </div>
       </section>
@@ -149,6 +149,18 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    for (const link of document.querySelectorAll('a[href^="mailto:"]')) {
+      link.addEventListener("click", (event) => {
+        const href = link.getAttribute("href");
+        if (!href) {
+          return;
+        }
+
+        event.preventDefault();
+        window.location.href = href;
+      });
+    }
   </script>
 </body>
 </html>
