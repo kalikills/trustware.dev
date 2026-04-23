@@ -49,7 +49,7 @@
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px; position:relative; z-index:1}
     header{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0 26px}
-    .brand{display:flex; align-items:center; gap:12px}
+    .brand{display:flex; align-items:center; gap:12px; color:var(--text); text-decoration:none}
     .brand img{height:46px; width:auto}
     .brand .name{font-weight:650; letter-spacing:.3px}
     nav{display:flex; gap:14px; color:var(--muted); font-size:14px}
@@ -150,10 +150,10 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">
-        <a href="/"><img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" /></a>
-        <div class="name">Trustware Technologies</div>
-      </div>
+      <a class="brand" href="/" aria-label="Trustware Technologies home">
+        <img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" />
+        <span class="name">Trustware Technologies</span>
+      </a>
       <nav>
         <a href="/devvault/">DevVault</a>
         <a href="/privacy/">Privacy</a>
