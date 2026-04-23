@@ -312,7 +312,7 @@
       <section class="section">
         <div class="buyerNote">
           <strong>What happens after checkout:</strong>
-          Checkout creates an annual subscription contract. DevVault then issues a signed `.dvlic` license through licensing@trustware.dev. Business customers must have a NAS or network share ready because Business runtime enforcement requires an admin-configured network vault.
+          Checkout creates an annual subscription contract. DevVault then issues a signed `.dvlic` license through the Trustware licensing workflow. Business customers must have a NAS or network share ready because Business runtime enforcement requires an admin-configured network vault.
         </div>
       </section>
 
@@ -358,7 +358,7 @@
         <div class="flowGrid">
           <div class="flowStep"><strong>1. Stripe Checkout</strong>Public purchase starts from a Stripe Checkout-created subscription.</div>
           <div class="flowStep"><strong>2. Server issuance</strong>The webhook signs a `.dvlic` license and records authority server-side.</div>
-          <div class="flowStep"><strong>3. Email delivery</strong>Production delivery uses licensing@trustware.dev through Zoho SMTP.</div>
+          <div class="flowStep"><strong>3. Email delivery</strong>Production delivery uses the Trustware licensing and email delivery workflow.</div>
           <div class="flowStep"><strong>4. Runtime enforcement</strong>The desktop enforces signed entitlements at protected action boundaries.</div>
         </div>
       </section>
