@@ -28,15 +28,15 @@
     .card{margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:rgba(255,255,255,.02)}
     h1{margin:0 0 6px}
     .muted{color:var(--muted)}
-    .topActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.035);color:var(--text);font-weight:700;text-decoration:none}
     ul{margin:10px 0 0 18px;color:var(--muted)}
+    .footer{display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--muted);font-size:14px;padding-top:28px}
     @media (max-width: 860px){
       body::before{
         background-position:center center;
         background-size:min(82vw, 420px) auto;
         opacity:.04;
       }
+      .footer{flex-direction:column;align-items:flex-start}
     }
   </style>
 </head>
@@ -45,9 +45,6 @@
     <p class="muted"><a href="/">&larr; Back</a></p>
     <h1>Privacy Policy</h1>
     <p class="muted">Last updated: 2026-04-23</p>
-    <div class="topActions">
-      <a class="btn" href="/contact/">Talk to sales</a>
-    </div>
 
     <div class="card">
       <p>Trustware Technologies operates trustware.dev. We collect only what is necessary to operate the site and communicate with you.</p>
@@ -71,6 +68,19 @@
       <h2>Contact</h2>
       <p class="muted">Privacy questions: <a href="mailto:privacy@trustware.dev">privacy@trustware.dev</a>. Product support: <a href="mailto:support@trustware.dev">support@trustware.dev</a>. Sales: <a href="/contact/">contact page</a>.</p>
     </div>
+
+    <div class="footer">
+      <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
+      <div>
+        <a href="/contact/">Contact</a> &middot;
+        <a href="/privacy/">Privacy</a> &middot;
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
   </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
