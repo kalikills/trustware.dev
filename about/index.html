@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Trustware Technologies</title>
+  <meta name="description" content="About Trustware Technologies, a software company building disciplined operational tools and trustworthy software systems." />
+  <link rel="icon" href="/assets/icons/favicon.ico?v=13">
+  <style>
+    :root{--bg:#0b0b0d;--text:#e9e9ee;--muted:#b7b7c3;--border:#23232a;--radius:22px;--max:1080px}
+    *{box-sizing:border-box}
+    body{margin:0;position:relative;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:
+      radial-gradient(circle at top, rgba(216,30,30,.16), transparent 42%),
+      linear-gradient(180deg,#1c070a 0%, #0b0b0d 24%, #0b0b0d 100%);
+      color:var(--text);line-height:1.6}
+    body::before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;z-index:0;
+      background-image:url("/assets/logo/trustware-logo.png");
+      background-repeat:no-repeat;background-position:center center;background-size:min(52vw, 700px) auto;
+      opacity:.05;filter:saturate(.88) brightness(.9)
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:30px 18px 70px;position:relative;z-index:1}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 30px}
+    .brand{display:flex;align-items:center;gap:13px;color:var(--text);text-decoration:none}
+    .brand img{height:48px;width:auto}
+    .brand .name{font-weight:750;letter-spacing:.3px}
+    nav{display:flex;gap:16px;color:var(--muted);font-size:15px}
+    nav a:hover{text-decoration:underline;text-underline-offset:3px}
+    .hero,.card{border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border-radius:28px}
+    .hero{padding:34px 28px}
+    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+    h1{margin:12px 0 12px;font-size:clamp(38px,6vw,70px);line-height:.95;letter-spacing:-.05em}
+    .sub{max-width:760px;margin:0;color:var(--muted);font-size:clamp(18px,2.2vw,24px)}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:15px;border:1px solid var(--border);background:rgba(255,255,255,.035);color:var(--text);font-weight:800;letter-spacing:.2px}
+    .btnPrimary{border-color:rgba(216,30,30,.62);background:linear-gradient(180deg,rgba(216,30,30,.26),rgba(216,30,30,.11))}
+    .section{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{padding:22px}
+    .card h2{margin:0 0 10px;font-size:24px;letter-spacing:-.03em}
+    .card p{margin:0;color:var(--muted)}
+    ul{margin:10px 0 0 18px;color:var(--muted)}
+    .footer{display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--muted);font-size:14px;padding-top:28px}
+    @media (max-width: 860px){
+      nav{width:100%;justify-content:flex-start;flex-wrap:wrap}
+      header,.footer{flex-direction:column;align-items:flex-start}
+      .grid{grid-template-columns:1fr}
+      body::before{background-size:min(82vw, 420px) auto;opacity:.04}
+      .hero{padding:28px 20px}
+      .card{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/" aria-label="Trustware Technologies home">
+        <img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" />
+        <span class="name">Trustware Technologies</span>
+      </a>
+      <nav>
+        <a href="/about/">About</a>
+        <a href="/devvault/">DevVault</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">About Trustware Technologies</div>
+        <h1>A software company built around operational trust.</h1>
+        <p class="sub">Trustware Technologies builds software for environments where ambiguity creates risk. We care about explicit rules, enforceable boundaries, and tools that make operational intent visible instead of implied.</p>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="/devvault/">Explore DevVault</a>
+          <a class="btn" href="/contact/">Talk to sales</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid">
+          <article class="card">
+            <h2>What Trustware is</h2>
+            <p>Trustware is the company identity. DevVault is the first public product, but the company direction is broader than a single application.</p>
+          </article>
+          <article class="card">
+            <h2>What we value</h2>
+            <p>We prefer disciplined systems, clear operational boundaries, and software that can be governed instead of merely used.</p>
+          </article>
+          <article class="card">
+            <h2>Where we are headed</h2>
+            <p>We are building a company around trustworthy operational software, with DevVault serving as the first release in that direction.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Current focus</h2>
+        <ul>
+          <li>DevVault is the current Trustware product line</li>
+          <li>Its focus is backup integrity, restore confidence, signed licensing, and NAS-governed operation</li>
+          <li>The larger company mission is to ship software that makes authority, control, and operational trust explicit</li>
+        </ul>
+      </section>
+    </main>
+
+    <div class="footer">
+      <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
+      <div>
+        <a href="/about/">About</a> &middot;
+        <a href="/contact/">Contact</a> &middot;
+        <a href="/privacy/">Privacy</a> &middot;
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
