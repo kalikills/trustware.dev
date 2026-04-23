@@ -25,6 +25,10 @@
     }
     a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
     .wrap{max-width:900px;margin:0 auto;padding:28px 18px 64px;position:relative;z-index:1}
+    header{display:flex;align-items:center;gap:13px;padding:2px 0 20px}
+    .brand{display:flex;align-items:center;gap:13px;color:var(--text);text-decoration:none}
+    .brand img{height:48px;width:auto}
+    .brand .name{font-weight:750;letter-spacing:.3px}
     .card{margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:rgba(255,255,255,.02)}
     h1{margin:0 0 6px}
     .muted{color:var(--muted)}
@@ -42,7 +46,12 @@
 </head>
 <body>
   <div class="wrap">
-    <p class="muted"><a href="/">&larr; Back</a></p>
+    <header>
+      <a class="brand" href="/" aria-label="Trustware Technologies home">
+        <img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" />
+        <span class="name">Trustware Technologies</span>
+      </a>
+    </header>
     <h1>Terms of Use</h1>
     <p class="muted">Last updated: 2026-04-23</p>
 
