@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - Trustware Technologies</title>
+  <meta name="description" content="Frequently asked questions about DevVault plans, license delivery, installer download, NAS requirements, renewals, offline use, and customer setup." />
+  <link rel="icon" href="/assets/icons/favicon.ico?v=13">
+  <style>
+    :root{
+      --bg:#09090b;
+      --panel:#111114;
+      --panel-strong:#17171c;
+      --text:#f0eef2;
+      --muted:#bdb8c2;
+      --border:#2b2830;
+      --red:#d81e1e;
+      --gold:#f2cf45;
+      --shadow:0 18px 55px rgba(0,0,0,.48);
+      --radius:22px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      position:relative;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1000px 520px at 50% 0%, rgba(216,30,30,.20), transparent 58%),
+        linear-gradient(180deg, #16080d 0%, var(--bg) 34%, #050506 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:url("/assets/logo/trustware-logo.png");
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:min(54vw, 650px) auto;
+      opacity:.07;
+      filter:saturate(.9) brightness(.86);
+      z-index:0;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:30px 18px 70px;position:relative;z-index:1}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 34px}
+    .brand{display:flex;align-items:center;gap:13px;color:var(--text);text-decoration:none}
+    .brand img{height:48px;width:auto}
+    .brand .name{font-weight:750;letter-spacing:.3px}
+    nav{display:flex;gap:16px;color:var(--muted);font-size:15px}
+    nav a{padding:8px 10px;border:1px solid transparent;border-radius:12px}
+    nav a:hover{border-color:var(--border);background:rgba(255,255,255,.03)}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.09);
+      background:
+        linear-gradient(135deg, rgba(216,30,30,.18), rgba(255,255,255,.025) 48%, rgba(0,0,0,.28)),
+        rgba(255,255,255,.025);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:40px 32px;
+    }
+    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+    h1{margin:12px 0 12px;font-size:clamp(40px,6vw,70px);line-height:.95;letter-spacing:-.05em}
+    .sub{max-width:780px;margin:0;color:var(--muted);font-size:clamp(18px,2vw,22px)}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 18px;
+      border-radius:15px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .btnPrimary{
+      border-color:rgba(216,30,30,.62);
+      background:linear-gradient(180deg, rgba(216,30,30,.26), rgba(216,30,30,.11));
+    }
+    .section{margin-top:28px}
+    .sectionHead{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}
+    .section h2{margin:0;font-size:clamp(28px,4vw,42px);line-height:1;letter-spacing:-.035em}
+    .sectionLead{max-width:760px;margin:8px 0 0;color:var(--muted)}
+    .faqGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .faqCard{
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 12px 36px rgba(0,0,0,.22);
+    }
+    .faqCard h3{margin:0 0 10px;font-size:22px;letter-spacing:-.03em}
+    .faqCard p{margin:0;color:var(--muted)}
+    .faqCard p + p{margin-top:12px}
+    .noteBand{
+      border:1px solid rgba(242,207,69,.32);
+      background:linear-gradient(135deg, rgba(242,207,69,.10), rgba(216,30,30,.08));
+      border-radius:var(--radius);
+      padding:20px 22px;
+      color:var(--muted);
+    }
+    .noteBand strong{display:block;color:var(--gold);font-size:18px;margin-bottom:6px}
+    .footer{
+      margin-top:34px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:13px;
+      padding-top:18px;
+    }
+    .footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    @media (max-width: 980px){
+      .faqGrid{grid-template-columns:1fr}
+      nav{flex-wrap:wrap;justify-content:flex-end}
+      body::before{background-size:min(84vw, 430px) auto;opacity:.055}
+      .hero{padding:30px 22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/" aria-label="Trustware Technologies home">
+        <img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" />
+        <span class="name">Trustware Technologies</span>
+      </a>
+      <nav>
+        <a href="/about/">About</a>
+        <a href="/devvault/">DevVault</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">DevVault Buyer FAQ</div>
+        <h1>Answers buyers usually need before and after checkout.</h1>
+        <p class="sub">This page covers the questions most likely to come up around purchase, license delivery, installer download, plan differences, Business NAS readiness, renewals, and common operator setup issues.</p>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="/devvault/">Review DevVault plans</a>
+          <a class="btn" href="/contact/">Talk to sales</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="noteBand">
+          <strong>Important before Business checkout</strong>
+          Business is NAS-first. Have a customer-managed NAS, SMB UNC path, mapped drive, or equivalent network share ready before rollout. Business backup protection will not run until an admin configures the network vault.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="sectionHead">
+          <div>
+            <h2>Purchase And Delivery</h2>
+            <p class="sectionLead">What customers receive after payment, what email to watch, and what to do if delivery or download looks wrong.</p>
+          </div>
+        </div>
+        <div class="faqGrid">
+          <article class="faqCard">
+            <h3>What happens right after checkout?</h3>
+            <p>Checkout creates an annual DevVault subscription for the plan and seat count selected. After payment succeeds, DevVault issues a signed <code>.dvlic</code> license for that purchase.</p>
+          </article>
+          <article class="faqCard">
+            <h3>Where does the license go?</h3>
+            <p>The signed <code>.dvlic</code> license is emailed to the same email address used during checkout. The license file is attached at the bottom of the purchase email.</p>
+          </article>
+          <article class="faqCard">
+            <h3>Does the email include the installer too?</h3>
+            <p>Yes. The same delivery email includes the current DevVault installer download link and the signed license attachment so the buyer can install and activate from one message.</p>
+          </article>
+          <article class="faqCard">
+            <h3>What if I do not see the email?</h3>
+            <p>Check inbox, spam, junk, and promotions first. If it still does not appear, contact <a href="mailto:support@trustware.dev">support@trustware.dev</a> or <a href="mailto:licensing@trustware.dev">licensing@trustware.dev</a> and include the purchase email address plus approximate checkout time.</p>
+          </article>
+          <article class="faqCard">
+            <h3>What if I bought twice by accident?</h3>
+            <p>Contact support with the purchase email address and approximate checkout time. Accidental duplicate purchases can be reviewed and refunded, but DevVault does not intentionally suppress a valid new purchase just because the same email bought before.</p>
+          </article>
+          <article class="faqCard">
+            <h3>Can the license email be resent?</h3>
+            <p>Yes. Support or licensing can resend delivery when needed. Include the purchase email address and enough detail to identify the order quickly.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="sectionHead">
+          <div>
+            <h2>Plans And Activation</h2>
+            <p class="sectionLead">What each plan unlocks, and what the desktop expects during setup.</p>
+          </div>
+        </div>
+        <div class="faqGrid">
+          <article class="faqCard">
+            <h3>What is the difference between Core, Pro, and Business?</h3>
+            <p>Core is individual protection. Pro adds advanced scan reports, snapshot comparison, recovery audit reports, and export workflows. Business adds seat administration, fleet visibility, and NAS-governed shared-vault operation.</p>
+          </article>
+          <article class="faqCard">
+            <h3>Do Core and Pro require a NAS?</h3>
+            <p>No. Core and Pro can activate and run with a local vault. Only Business requires a customer-managed NAS or network share before protected backup can begin.</p>
+          </article>
+          <article class="faqCard">
+            <h3>What does Business require before rollout?</h3>
+            <p>Business requires a reachable network vault target such as a NAS, SMB UNC path, mapped drive, or equivalent share. An admin must configure and save that network vault before Business backup is allowed to run.</p>
+          </article>
+          <article class="faqCard">
+            <h3>Does DevVault need internet all the time?</h3>
+            <p>DevVault is designed around signed offline licensing and protected local workflows. The product itself is not dependent on continuous internet access to perform core backup and restore actions after installation and activation.</p>
+          </article>
+          <article class="faqCard">
+            <h3>How do I install the license file?</h3>
+            <p>Use the desktop install-license flow and select the <code>.dvlic</code> file from your purchase email. DevVault verifies the signature before storing it.</p>
+          </article>
+          <article class="faqCard">
+            <h3>What if the desktop shows the wrong setup path for my license?</h3>
+            <p>Core and Pro should not push buyers into Business setup. If the installed license behaves like the wrong plan, contact support and include the purchase email plus the exact screen you are seeing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="sectionHead">
+          <div>
+            <h2>Renewals And Operations</h2>
+            <p class="sectionLead">Questions around yearly billing, operator behavior, and what to expect in real use.</p>
+          </div>
+        </div>
+        <div class="faqGrid">
+          <article class="faqCard">
+            <h3>Is DevVault annual or monthly?</h3>
+            <p>DevVault launch pricing is annual. Core, Pro, and Business are sold as yearly subscriptions.</p>
+          </article>
+          <article class="faqCard">
+            <h3>How are seats counted?</h3>
+            <p>Seat authority follows the subscription quantity for the plan purchased. For Business, seat availability and protected status are visible through the Business runtime surfaces.</p>
+          </article>
+          <article class="faqCard">
+            <h3>What happens if Business storage is not configured?</h3>
+            <p>Business backup protection is blocked until a valid network vault is configured. This is intentional runtime enforcement, not an optional warning.</p>
+          </article>
+          <article class="faqCard">
+            <h3>Does DevVault back up to Trustware-hosted storage?</h3>
+            <p>No. DevVault does not operate customer backup storage. Customers control their own local or network vault targets.</p>
+          </article>
+          <article class="faqCard">
+            <h3>What if I need help choosing a plan?</h3>
+            <p>Use <a href="/contact/">contact</a> or email <a href="mailto:sales@trustware.dev">sales@trustware.dev</a>. If you are unsure about NAS readiness, Business should be discussed before checkout.</p>
+          </article>
+          <article class="faqCard">
+            <h3>Who should I contact for support vs licensing?</h3>
+            <p>Use <a href="mailto:support@trustware.dev">support@trustware.dev</a> for install, activation, or product help. Use <a href="mailto:licensing@trustware.dev">licensing@trustware.dev</a> for signed license delivery, entitlement, or provisioning questions.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer">
+      <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
+      <div>
+        <a href="/about/">About</a> &middot;
+        <a href="/devvault/">DevVault</a> &middot;
+        <a href="/faq/">FAQ</a> &middot;
+        <a href="/contact/">Contact</a> &middot;
+        <a href="/privacy/">Privacy</a> &middot;
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

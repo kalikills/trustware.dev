@@ -171,12 +171,15 @@
     .flowStep strong{display:block;color:var(--text);margin-bottom:6px}
     .buyerNote{
       border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.025);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(216,30,30,.06));
       border-radius:var(--radius);
-      padding:18px;
-      color:var(--muted);
+      padding:20px 22px;
+      color:var(--text);
+      font-size:18px;
+      line-height:1.65;
+      box-shadow:0 14px 38px rgba(0,0,0,.22);
     }
-    .buyerNote strong{color:var(--text)}
+    .buyerNote strong{color:var(--text);font-weight:900}
     .checkoutStatus{
       border:1px solid rgba(216,30,30,.34);
       background:rgba(216,30,30,.08);
@@ -217,6 +220,7 @@
       <nav>
         <a href="/about/">About</a>
         <a href="/devvault/">DevVault</a>
+        <a href="/faq/">FAQ</a>
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
         <a href="/contact/">Contact</a>
@@ -239,6 +243,7 @@
         <div class="ctaRow">
           <a class="btn btnPrimary" href="#pricing">View launch tiers</a>
           <a class="btn" href="#screenshots">See real screenshots</a>
+          <a class="btn" href="/faq/">Read FAQ</a>
           <a class="btn" href="/contact/">Talk to sales</a>
         </div>
       </section>
@@ -312,7 +317,22 @@
       <section class="section">
         <div class="buyerNote">
           <strong>What happens after checkout:</strong>
-          Checkout creates an annual subscription contract. DevVault then issues a signed `.dvlic` license through the Trustware licensing workflow. Business customers must have a NAS or network share ready because Business runtime enforcement requires an admin-configured network vault.
+          Checkout creates your annual DevVault subscription. After payment, DevVault sends a signed <code>.dvlic</code> license to the same email you used at checkout, attached at the bottom of that email. If you purchase Business, have your NAS or network share ready before install, because Business backup will not run until an admin configures a network vault.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="sectionHead">
+          <div>
+            <h2>License Delivery</h2>
+            <p class="sectionLead">What buyers receive after checkout, and what DevVault requires before protected actions can begin.</p>
+          </div>
+        </div>
+        <div class="flowGrid">
+          <div class="flowStep"><strong>1. Stripe Checkout</strong>Your purchase starts an annual DevVault subscription for the plan you selected.</div>
+          <div class="flowStep"><strong>2. Signed license issuance</strong>DevVault generates a signed <code>.dvlic</code> license for that purchase and records the license server-side.</div>
+          <div class="flowStep"><strong>3. Email delivery</strong>Your license is emailed to the same address used at checkout, with the installer download and license attachment included.</div>
+          <div class="flowStep"><strong>4. Runtime requirements</strong>Core and Pro can activate locally. Business requires an admin-configured NAS or network share before backup protection is allowed to run.</div>
         </div>
       </section>
 
@@ -348,27 +368,13 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="sectionHead">
-          <div>
-            <h2>License Delivery</h2>
-            <p class="sectionLead">DevVault launch provisioning is contract-driven. Stripe Checkout creates the subscription contract, then signed license authority is issued through the production backend.</p>
-          </div>
-        </div>
-        <div class="flowGrid">
-          <div class="flowStep"><strong>1. Stripe Checkout</strong>Public purchase starts from a Stripe Checkout-created subscription.</div>
-          <div class="flowStep"><strong>2. Server issuance</strong>The webhook signs a `.dvlic` license and records authority server-side.</div>
-          <div class="flowStep"><strong>3. Email delivery</strong>Production delivery uses the Trustware licensing and email delivery workflow.</div>
-          <div class="flowStep"><strong>4. Runtime enforcement</strong>The desktop enforces signed entitlements at protected action boundaries.</div>
-        </div>
-      </section>
-
     </main>
 
     <div class="footer">
       <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
       <div>
         <a href="/about/">About</a> &middot;
+        <a href="/faq/">FAQ</a> &middot;
         <a href="/contact/">Contact</a> &middot;
         <a href="/privacy/">Privacy</a> &middot;
         <a href="/terms/">Terms</a>
