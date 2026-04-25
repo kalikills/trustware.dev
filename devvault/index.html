@@ -307,7 +307,7 @@
               <li>Fleet protection state and NAS health</li>
               <li>Requires NAS, SMB UNC path, or network share</li>
             </ul>
-            <a class="btn btnMuted" href="/contact/" data-checkout="business-contact">Contact Sales for Business</a>
+            <a class="btn btnPrimary" href="https://buy.stripe.com/00w14g1wk7Xu6nT8hr77O0k" data-checkout="business">Start Business Checkout (NAS required)</a>
           </article>
         </div>
       </section>
@@ -315,7 +315,7 @@
       <section class="section">
         <div class="nasNotice">
           <strong>Business is NAS-first.</strong>
-          Business protection requires a customer-managed NAS or network share. DevVault does not operate customer backup storage, and Business backup is blocked until a valid network vault target is configured. Business self-checkout is temporarily paused while multi-organization owner handling is finalized. If you are unsure whether your environment is ready, <a href="/contact/">talk to sales</a> before checkout.
+          Business protection requires a customer-managed NAS or network share. DevVault does not operate customer backup storage, and Business backup is blocked until a valid network vault target is configured. If you are unsure whether your environment is ready, <a href="/contact/">talk to sales</a> before checkout.
         </div>
       </section>
 
@@ -391,13 +391,13 @@
   const checkoutLinks = {
       core: "https://buy.stripe.com/7sY5kw6QE4Li9A51T377O0i",
       pro: "https://buy.stripe.com/6oUeV67UIelS8w155f77O0j",
-      business: ""
+      business: "https://buy.stripe.com/00w14g1wk7Xu6nT8hr77O0k"
     };
 
     const checkoutLabels = {
       core: "Start Core Checkout",
       pro: "Start Pro Checkout",
-      business: ""
+      business: "Start Business Checkout (NAS required)"
     };
 
     for (const [tier, url] of Object.entries(checkoutLinks)) {
