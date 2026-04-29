@@ -122,6 +122,82 @@
     .section h2{margin:0;font-size:clamp(28px,4vw,42px);line-height:1;letter-spacing:-.035em}
     .sectionLead{max-width:720px;margin:8px 0 0;color:var(--muted)}
     .tierGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .earlyAccessHead{
+      margin-bottom:18px;
+      text-align:center;
+    }
+    .earlyAccessHead h2{
+      font-size:clamp(42px,7vw,78px);
+      line-height:.92;
+      letter-spacing:-.06em;
+      text-transform:uppercase;
+      text-shadow:0 0 28px rgba(216,30,30,.28);
+    }
+    .earlyAccessWrap{display:block}
+    .tierEarly{
+      position:relative;
+      overflow:hidden;
+      min-height:auto;
+      border:1px solid rgba(216,30,30,.52);
+      background:
+        radial-gradient(circle at top right, rgba(216,30,30,.22), transparent 38%),
+        linear-gradient(135deg, rgba(216,30,30,.18), rgba(255,255,255,.04) 44%, rgba(0,0,0,.34)),
+        rgba(255,255,255,.03);
+      box-shadow:
+        0 0 0 1px rgba(216,30,30,.12) inset,
+        0 30px 70px rgba(0,0,0,.34);
+      padding:30px;
+    }
+    .tierEarly::before{
+      content:"Early Access";
+      position:absolute;
+      top:18px;
+      right:22px;
+      font-size:clamp(32px,7vw,86px);
+      font-weight:900;
+      letter-spacing:-.06em;
+      color:rgba(255,255,255,.05);
+      pointer-events:none;
+      text-transform:uppercase;
+    }
+    .tierEarly .tierTop{
+      align-items:flex-start;
+      margin-bottom:8px;
+    }
+    .tierEarly h3{
+      font-size:clamp(30px,5vw,46px);
+      line-height:.95;
+    }
+    .tierEarly .tag{
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.05);
+      color:var(--text);
+    }
+    .tierEarly .price{
+      margin:8px 0 12px;
+      font-size:clamp(68px,11vw,116px);
+      line-height:.9;
+      text-shadow:0 0 32px rgba(216,30,30,.22);
+    }
+    .tierEarly .price span{
+      display:none;
+    }
+    .tierEarly ul{
+      margin:10px 0 26px 22px;
+      max-width:760px;
+      font-size:clamp(18px,2vw,22px);
+      color:var(--text);
+    }
+    .tierEarly li{
+      margin:10px 0;
+    }
+    .tierEarly .btn{
+      width:min(420px,100%);
+      min-height:58px;
+      font-size:22px;
+      border-color:rgba(216,30,30,.8);
+      box-shadow:0 16px 36px rgba(216,30,30,.18);
+    }
     .tier{
       display:flex;
       flex-direction:column;
@@ -273,7 +349,7 @@
           and Business-grade NAS governance for teams that need shared vault authority.
         </p>
         <div class="heroFacts">
-          <div class="fact">Core: $100 / year</div>
+          <div class="fact">Core: $99 / year</div>
           <div class="fact">Pro: $249 / year</div>
           <div class="fact">Business: $499 / year</div>
         </div>
@@ -287,15 +363,14 @@
       </section>
 
       <section class="section" id="pricing">
-        <div class="sectionHead">
+        <div class="sectionHead earlyAccessHead">
           <div>
             <h2>Early Access - $49</h2>
-            <p class="sectionLead">12 months of access during the early release phase.</p>
           </div>
         </div>
 
-        <div class="tierGrid">
-          <article class="tier">
+        <div class="earlyAccessWrap">
+          <article class="tier tierEarly">
             <div class="tierTop">
               <h3>Early Access</h3>
               <span class="tag">Early release offer</span>
@@ -324,7 +399,7 @@
               <h3>Core</h3>
               <span class="tag">Individual protection</span>
             </div>
-            <div class="price">$100<span>per year</span></div>
+            <div class="price">$99<span>per year</span></div>
             <ul>
               <li>Backup and restore engine</li>
               <li>Snapshot system and backup queue</li>
