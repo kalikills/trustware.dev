@@ -7,9 +7,29 @@
   <meta name="description" content="Terms of use for trustware.dev" />
   <link rel="icon" href="/assets/icons/favicon.ico?v=13">
   <style>
-    :root{--bg:#0b0b0d;--text:#e9e9ee;--muted:#b7b7c3;--border:#23232a;--radius:18px}
+    :root{
+      --bg:#09090b;
+      --panel:#111114;
+      --panel-strong:#17171c;
+      --text:#f0eef2;
+      --muted:#bdb8c2;
+      --border:#2b2830;
+      --red:#d81e1e;
+      --shadow:0 18px 55px rgba(0,0,0,.48);
+      --radius:22px;
+      --max:1120px;
+    }
     *{box-sizing:border-box}
-    body{margin:0;position:relative;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.6}
+    body{
+      margin:0;
+      position:relative;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1000px 520px at 50% 0%, rgba(216,30,30,.20), transparent 58%),
+        linear-gradient(180deg, #16080d 0%, var(--bg) 34%, #050506 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
     body::before{
       content:"";
       position:fixed;
@@ -18,33 +38,66 @@
       background-image:url("/assets/logo/trustware-logo.png");
       background-repeat:no-repeat;
       background-position:center center;
-      background-size:min(50vw, 620px) auto;
-      opacity:.05;
-      filter:saturate(.85) brightness(.9);
-      z-index:0
+      background-size:min(54vw, 650px) auto;
+      opacity:.07;
+      filter:saturate(.9) brightness(.86);
+      z-index:0;
     }
-    a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
-    .wrap{max-width:900px;margin:0 auto;padding:28px 18px 64px;position:relative;z-index:1}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 26px}
+    a{color:inherit;text-decoration:none}
+    .inlineLink{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:30px 18px 70px;position:relative;z-index:1}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 34px}
     .brand{display:flex;align-items:center;gap:13px;color:var(--text);text-decoration:none}
     .brand img{height:48px;width:auto}
     .brand .name{font-weight:750;letter-spacing:.3px}
     nav{display:flex;gap:16px;color:var(--muted);font-size:15px}
-    nav a{padding:8px 10px;border:1px solid transparent;border-radius:12px;text-decoration:none}
+    nav a{padding:8px 10px;border:1px solid transparent;border-radius:12px}
     nav a:hover{border-color:var(--border);background:rgba(255,255,255,.03)}
-    .card{margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:rgba(255,255,255,.02)}
-    h1{margin:0 0 6px}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.09);
+      background:
+        linear-gradient(135deg, rgba(216,30,30,.18), rgba(255,255,255,.025) 48%, rgba(0,0,0,.28)),
+        rgba(255,255,255,.025);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:40px 32px;
+    }
+    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+    h1{margin:12px 0 12px;font-size:clamp(40px,6vw,70px);line-height:.95;letter-spacing:-.05em}
+    .sub{max-width:780px;margin:0;color:var(--muted);font-size:clamp(18px,2vw,22px)}
+    .section{margin-top:28px}
+    .legalCard{
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      padding:24px 22px;
+      box-shadow:0 12px 36px rgba(0,0,0,.22);
+    }
+    .legalCard h2{margin:22px 0 10px;font-size:24px;letter-spacing:-.03em}
+    .legalCard h2:first-of-type{margin-top:0}
+    .legalCard p{margin:0;color:var(--muted)}
+    .legalCard p + p{margin-top:12px}
+    .legalCard ul{margin:10px 0 0 18px;color:var(--muted)}
+    .legalCard li{margin:8px 0}
     .muted{color:var(--muted)}
-    ul{margin:10px 0 0 18px;color:var(--muted)}
-    .footer{display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--muted);font-size:14px;padding-top:28px}
-    @media (max-width: 860px){
-      body::before{
-        background-position:center center;
-        background-size:min(82vw, 420px) auto;
-        opacity:.04;
-      }
-      nav{width:100%;justify-content:flex-start;flex-wrap:wrap}
-      header{flex-direction:column;align-items:flex-start}
+    .footer{
+      margin-top:34px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:13px;
+      padding-top:18px;
+    }
+    .footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    @media (max-width: 980px){
+      nav{flex-wrap:wrap;justify-content:flex-end}
+      body::before{background-size:min(84vw, 430px) auto;opacity:.055}
+      .hero{padding:30px 22px}
       .footer{flex-direction:column;align-items:flex-start}
     }
   </style>
@@ -59,61 +112,70 @@
       <nav>
         <a href="/about/">About</a>
         <a href="/devvault/">DevVault</a>
+        <a href="/faq/">FAQ</a>
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
         <a href="/contact/">Contact</a>
       </nav>
     </header>
-    <h1>Terms of Use</h1>
-    <p class="muted">Last updated: 2026-04-29</p>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Trustware Technologies • Terms</div>
+        <h1>Terms of Use</h1>
+        <p class="sub">The rules for using trustware.dev, reviewing DevVault pricing, and interacting with hosted billing or customer workflows linked from the site.</p>
+        <p class="muted">Last updated: 2026-04-29</p>
+      </section>
 
-    <div class="card">
-      <p>These Terms of Use govern access to and use of trustware.dev, which is operated by Trustware Technologies, a TSW Technologies LLC business. By using the site, you agree to these Terms.</p>
+      <section class="section">
+        <div class="legalCard">
+          <p>These Terms of Use govern access to and use of trustware.dev, which is operated by Trustware Technologies, a TSW Technologies LLC business. By using the site, you agree to these Terms.</p>
 
-      <h2>Site use</h2>
-      <p class="muted">You may use the site only for lawful purposes related to learning about Trustware Technologies, DevVault, pricing, purchases, support, licensing, privacy, and related business matters.</p>
+          <h2>Site use</h2>
+          <p>You may use the site only for lawful purposes related to learning about Trustware Technologies, DevVault, pricing, purchases, support, licensing, privacy, and related business matters.</p>
 
-      <h2>Acceptable use</h2>
-      <ul>
-        <li>Do not attempt to disrupt, probe, or misuse the site.</li>
-        <li>Do not use the site in a way that violates applicable law.</li>
-        <li>Do not interfere with checkout, licensing, support, or billing-related workflows.</li>
-        <li>Do not misrepresent your identity, purchase status, entitlement status, or authority to act for an organization.</li>
-      </ul>
+          <h2>Acceptable use</h2>
+          <ul>
+            <li>Do not attempt to disrupt, probe, or misuse the site.</li>
+            <li>Do not use the site in a way that violates applicable law.</li>
+            <li>Do not interfere with checkout, licensing, support, or billing-related workflows.</li>
+            <li>Do not misrepresent your identity, purchase status, entitlement status, or authority to act for an organization.</li>
+          </ul>
 
-      <h2>Product, checkout, and account workflows</h2>
-      <p class="muted">The site may link to DevVault plan pages, Stripe-hosted checkout pages, and a Stripe-hosted customer billing portal. Purchases, billing details, subscription management, and payment processing may occur in those third-party hosted environments. Your use of those services can also be subject to the third party's own terms, policies, and checkout disclosures.</p>
+          <h2>Product, checkout, and account workflows</h2>
+          <p>The site may link to DevVault plan pages, Stripe-hosted checkout pages, and a Stripe-hosted customer billing portal. Purchases, billing details, subscription management, and payment processing may occur in those third-party hosted environments. Your use of those services can also be subject to the third party's own terms, policies, and checkout disclosures.</p>
 
-      <h2>Subscriptions, pricing, and renewals</h2>
-      <p class="muted">DevVault plan pricing, billing cadence, and subscription structure are described on the site and may also be presented during checkout. If you purchase a subscription, you are responsible for reviewing the plan, price, billing frequency, quantity, and other checkout details before completing payment. Renewals, billing updates, and cancellation management may be handled through the Stripe-hosted billing tools made available to customers.</p>
+          <h2>Subscriptions, pricing, and renewals</h2>
+          <p>DevVault plan pricing, billing cadence, and subscription structure are described on the site and may also be presented during checkout. If you purchase a subscription, you are responsible for reviewing the plan, price, billing frequency, quantity, and other checkout details before completing payment. Renewals, billing updates, and cancellation management may be handled through the Stripe-hosted billing tools made available to customers.</p>
 
-      <h2>License delivery and product-specific terms</h2>
-      <p class="muted">DevVault purchases may result in license issuance, entitlement records, and license-delivery communications. Use of the DevVault software itself may be subject to additional product, subscription, license, or entitlement terms presented at purchase, delivered with the product, or otherwise provided by Trustware. If product-specific terms conflict with these site Terms for software use, the product-specific terms control for that software use.</p>
+          <h2>License delivery and product-specific terms</h2>
+          <p>DevVault purchases may result in license issuance, entitlement records, and license-delivery communications. Use of the DevVault software itself may be subject to additional product, subscription, license, or entitlement terms presented at purchase, delivered with the product, or otherwise provided by Trustware. If product-specific terms conflict with these site Terms for software use, the product-specific terms control for that software use.</p>
 
-      <h2>Intellectual property</h2>
-      <p class="muted">The trustware.dev site, Trustware branding, page copy, logos, product descriptions, and related content are owned by Trustware Technologies or its licensors and are protected by applicable intellectual property laws. These Terms do not grant you ownership of the site or its content.</p>
+          <h2>Intellectual property</h2>
+          <p>The trustware.dev site, Trustware branding, page copy, logos, product descriptions, and related content are owned by Trustware Technologies or its licensors and are protected by applicable intellectual property laws. These Terms do not grant you ownership of the site or its content.</p>
 
-      <h2>Availability and changes</h2>
-      <p class="muted">We may update, suspend, remove, or change any part of the site, pricing presentation, content, links, or customer workflows at any time without prior notice. We may also revise these Terms by posting an updated version on this page.</p>
+          <h2>Availability and changes</h2>
+          <p>We may update, suspend, remove, or change any part of the site, pricing presentation, content, links, or customer workflows at any time without prior notice. We may also revise these Terms by posting an updated version on this page.</p>
 
-      <h2>No warranties</h2>
-      <p class="muted">The site, site content, and linked purchase workflows are provided "as is" and "as available" without warranties of any kind, to the maximum extent permitted by law.</p>
+          <h2>No warranties</h2>
+          <p>The site, site content, and linked purchase workflows are provided "as is" and "as available" without warranties of any kind, to the maximum extent permitted by law.</p>
 
-      <h2>Limitation of liability</h2>
-      <p class="muted">To the maximum extent permitted by law, Trustware Technologies, TSW Technologies LLC, and their service providers are not liable for indirect, incidental, special, consequential, or punitive damages arising from or related to use of the site, site unavailability, third-party checkout or billing services, or reliance on site content.</p>
+          <h2>Limitation of liability</h2>
+          <p>To the maximum extent permitted by law, Trustware Technologies, TSW Technologies LLC, and their service providers are not liable for indirect, incidental, special, consequential, or punitive damages arising from or related to use of the site, site unavailability, third-party checkout or billing services, or reliance on site content.</p>
 
-      <h2>Termination or restriction</h2>
-      <p class="muted">We may restrict or suspend access to the site or related workflows if we believe use is abusive, unlawful, deceptive, technically harmful, or otherwise inconsistent with these Terms.</p>
+          <h2>Termination or restriction</h2>
+          <p>We may restrict or suspend access to the site or related workflows if we believe use is abusive, unlawful, deceptive, technically harmful, or otherwise inconsistent with these Terms.</p>
 
-      <h2>Contact</h2>
-      <p class="muted">Questions about these Terms can be sent through the <a href="/contact/">contact page</a> or to the appropriate Trustware contact address listed there.</p>
-
-    </div>
+          <h2>Contact</h2>
+          <p>Questions about these Terms can be sent through the <a class="inlineLink" href="/contact/">contact page</a> or to the appropriate Trustware contact address listed there.</p>
+        </div>
+      </section>
+    </main>
 
     <div class="footer">
       <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
       <div>
         <a href="/about/">About</a> &middot;
+        <a href="/faq/">FAQ</a> &middot;
         <a href="/contact/">Contact</a> &middot;
         <a href="/privacy/">Privacy</a> &middot;
         <a href="/terms/">Terms</a>

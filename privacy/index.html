@@ -7,9 +7,29 @@
   <meta name="description" content="Privacy Policy for trustware.dev" />
   <link rel="icon" href="/assets/icons/favicon.ico?v=13">
   <style>
-    :root{--bg:#0b0b0d;--text:#e9e9ee;--muted:#b7b7c3;--border:#23232a;--radius:18px}
+    :root{
+      --bg:#09090b;
+      --panel:#111114;
+      --panel-strong:#17171c;
+      --text:#f0eef2;
+      --muted:#bdb8c2;
+      --border:#2b2830;
+      --red:#d81e1e;
+      --shadow:0 18px 55px rgba(0,0,0,.48);
+      --radius:22px;
+      --max:1120px;
+    }
     *{box-sizing:border-box}
-    body{margin:0;position:relative;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.6}
+    body{
+      margin:0;
+      position:relative;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1000px 520px at 50% 0%, rgba(216,30,30,.20), transparent 58%),
+        linear-gradient(180deg, #16080d 0%, var(--bg) 34%, #050506 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
     body::before{
       content:"";
       position:fixed;
@@ -18,33 +38,66 @@
       background-image:url("/assets/logo/trustware-logo.png");
       background-repeat:no-repeat;
       background-position:center center;
-      background-size:min(50vw, 620px) auto;
-      opacity:.05;
-      filter:saturate(.85) brightness(.9);
-      z-index:0
+      background-size:min(54vw, 650px) auto;
+      opacity:.07;
+      filter:saturate(.9) brightness(.86);
+      z-index:0;
     }
-    a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
-    .wrap{max-width:900px;margin:0 auto;padding:28px 18px 64px;position:relative;z-index:1}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 26px}
+    a{color:inherit;text-decoration:none}
+    .inlineLink{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:30px 18px 70px;position:relative;z-index:1}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 34px}
     .brand{display:flex;align-items:center;gap:13px;color:var(--text);text-decoration:none}
     .brand img{height:48px;width:auto}
     .brand .name{font-weight:750;letter-spacing:.3px}
     nav{display:flex;gap:16px;color:var(--muted);font-size:15px}
-    nav a{padding:8px 10px;border:1px solid transparent;border-radius:12px;text-decoration:none}
+    nav a{padding:8px 10px;border:1px solid transparent;border-radius:12px}
     nav a:hover{border-color:var(--border);background:rgba(255,255,255,.03)}
-    .card{margin-top:16px;border:1px solid var(--border);border-radius:var(--radius);padding:18px;background:rgba(255,255,255,.02)}
-    h1{margin:0 0 6px}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.09);
+      background:
+        linear-gradient(135deg, rgba(216,30,30,.18), rgba(255,255,255,.025) 48%, rgba(0,0,0,.28)),
+        rgba(255,255,255,.025);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:40px 32px;
+    }
+    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+    h1{margin:12px 0 12px;font-size:clamp(40px,6vw,70px);line-height:.95;letter-spacing:-.05em}
+    .sub{max-width:780px;margin:0;color:var(--muted);font-size:clamp(18px,2vw,22px)}
+    .section{margin-top:28px}
+    .legalCard{
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      padding:24px 22px;
+      box-shadow:0 12px 36px rgba(0,0,0,.22);
+    }
+    .legalCard h2{margin:22px 0 10px;font-size:24px;letter-spacing:-.03em}
+    .legalCard h2:first-of-type{margin-top:0}
+    .legalCard p{margin:0;color:var(--muted)}
+    .legalCard p + p{margin-top:12px}
+    .legalCard ul{margin:10px 0 0 18px;color:var(--muted)}
+    .legalCard li{margin:8px 0}
     .muted{color:var(--muted)}
-    ul{margin:10px 0 0 18px;color:var(--muted)}
-    .footer{display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--muted);font-size:14px;padding-top:28px}
-    @media (max-width: 860px){
-      body::before{
-        background-position:center center;
-        background-size:min(82vw, 420px) auto;
-        opacity:.04;
-      }
-      nav{width:100%;justify-content:flex-start;flex-wrap:wrap}
-      header{flex-direction:column;align-items:flex-start}
+    .footer{
+      margin-top:34px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:13px;
+      padding-top:18px;
+    }
+    .footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    @media (max-width: 980px){
+      nav{flex-wrap:wrap;justify-content:flex-end}
+      body::before{background-size:min(84vw, 430px) auto;opacity:.055}
+      .hero{padding:30px 22px}
       .footer{flex-direction:column;align-items:flex-start}
     }
   </style>
@@ -59,67 +112,76 @@
       <nav>
         <a href="/about/">About</a>
         <a href="/devvault/">DevVault</a>
+        <a href="/faq/">FAQ</a>
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
         <a href="/contact/">Contact</a>
       </nav>
     </header>
-    <h1>Privacy Policy</h1>
-    <p class="muted">Last updated: 2026-04-29</p>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">Trustware Technologies • Privacy</div>
+        <h1>Privacy Policy</h1>
+        <p class="sub">How trustware.dev handles site, inquiry, purchase, billing, licensing, and support-related information.</p>
+        <p class="muted">Last updated: 2026-04-29</p>
+      </section>
 
-    <div class="card">
-      <p>Trustware Technologies, a TSW Technologies LLC business, operates trustware.dev. This Privacy Policy explains what information we collect through the site, how we use it, and how it relates to DevVault purchase, billing, licensing, and support workflows.</p>
+      <section class="section">
+        <div class="legalCard">
+          <p>Trustware Technologies, a TSW Technologies LLC business, operates trustware.dev. This Privacy Policy explains what information we collect through the site, how we use it, and how it relates to DevVault purchase, billing, licensing, and support workflows.</p>
 
-      <h2>Scope</h2>
-      <p class="muted">This Privacy Policy applies to trustware.dev, including product, FAQ, contact, privacy, and terms pages, as well as Trustware-hosted communications connected to purchases or support requests. It does not replace the privacy practices of third-party services that operate their own environments, such as Stripe-hosted checkout or Stripe-hosted billing pages.</p>
+          <h2>Scope</h2>
+          <p>This Privacy Policy applies to trustware.dev, including product, FAQ, contact, privacy, and terms pages, as well as Trustware-hosted communications connected to purchases or support requests. It does not replace the privacy practices of third-party services that operate their own environments, such as Stripe-hosted checkout or Stripe-hosted billing pages.</p>
 
-      <h2>Information we collect</h2>
-      <ul>
-        <li>Basic technical logs and security signals, such as IP address, browser or device information, approximate timestamps, referrer data, and request metadata used to operate, secure, and troubleshoot the site.</li>
-        <li>Information you provide voluntarily when you email us or otherwise contact us, such as your name, company, email address, message contents, seat-count questions, product-fit questions, or deployment details you choose to send.</li>
-        <li>Purchase and billing-related information that we receive in connection with DevVault purchases, renewals, subscription events, entitlement provisioning, and customer support. This can include customer email address, subscription identifiers, plan or tier details, billing status, and related service records.</li>
-        <li>License-delivery and provisioning records necessary to issue, send, validate, reissue, or support DevVault licenses and related purchase communications.</li>
-      </ul>
+          <h2>Information we collect</h2>
+          <ul>
+            <li>Basic technical logs and security signals, such as IP address, browser or device information, approximate timestamps, referrer data, and request metadata used to operate, secure, and troubleshoot the site.</li>
+            <li>Information you provide voluntarily when you email us or otherwise contact us, such as your name, company, email address, message contents, seat-count questions, product-fit questions, or deployment details you choose to send.</li>
+            <li>Purchase and billing-related information that we receive in connection with DevVault purchases, renewals, subscription events, entitlement provisioning, and customer support. This can include customer email address, subscription identifiers, plan or tier details, billing status, and related service records.</li>
+            <li>License-delivery and provisioning records necessary to issue, send, validate, reissue, or support DevVault licenses and related purchase communications.</li>
+          </ul>
 
-      <h2>How we use information</h2>
-      <ul>
-        <li>Operate, maintain, and improve trustware.dev and related buyer information pages.</li>
-        <li>Respond to inquiries about DevVault, pricing, fit, support, licensing, billing, privacy, and company matters.</li>
-        <li>Process or support subscription, billing, entitlement, license-delivery, and customer-account workflows.</li>
-        <li>Protect against abuse, fraud, misuse, failed delivery, and security incidents.</li>
-        <li>Maintain internal business, operational, compliance, and support records.</li>
-      </ul>
+          <h2>How we use information</h2>
+          <ul>
+            <li>Operate, maintain, and improve trustware.dev and related buyer information pages.</li>
+            <li>Respond to inquiries about DevVault, pricing, fit, support, licensing, billing, privacy, and company matters.</li>
+            <li>Process or support subscription, billing, entitlement, license-delivery, and customer-account workflows.</li>
+            <li>Protect against abuse, fraud, misuse, failed delivery, and security incidents.</li>
+            <li>Maintain internal business, operational, compliance, and support records.</li>
+          </ul>
 
-      <h2>Stripe-hosted checkout and billing</h2>
-      <p class="muted">DevVault checkout and customer billing management use Stripe-hosted services. Stripe documentation states that Stripe can host both the checkout page and the customer portal. Customers enter payment and billing information in those Stripe-hosted environments, and Stripe processes that information under Stripe's own terms and privacy practices. Trustware receives the information needed to confirm purchases, manage subscriptions, deliver licenses, and support customers.</p>
+          <h2>Stripe-hosted checkout and billing</h2>
+          <p>DevVault checkout and customer billing management use Stripe-hosted services. Stripe documentation states that Stripe can host both the checkout page and the customer portal. Customers enter payment and billing information in those Stripe-hosted environments, and Stripe processes that information under Stripe's own terms and privacy practices. Trustware receives the information needed to confirm purchases, manage subscriptions, deliver licenses, and support customers.</p>
 
-      <h2>How we share information</h2>
-      <p class="muted">We do not sell personal information. We may share limited information with service providers only as needed to operate the site, process billing, deliver licenses or customer communications, maintain security, or comply with legal obligations. Depending on the workflow, those providers can include payment, email, hosting, infrastructure, logging, and support-related vendors.</p>
+          <h2>How we share information</h2>
+          <p>We do not sell personal information. We may share limited information with service providers only as needed to operate the site, process billing, deliver licenses or customer communications, maintain security, or comply with legal obligations. Depending on the workflow, those providers can include payment, email, hosting, infrastructure, logging, and support-related vendors.</p>
 
-      <h2>Retention</h2>
-      <p class="muted">We retain information for as long as reasonably necessary to operate the site, maintain business and support records, administer subscriptions, document license issuance and entitlement history, resolve disputes, protect against fraud or abuse, and meet legal or accounting obligations.</p>
+          <h2>Retention</h2>
+          <p>We retain information for as long as reasonably necessary to operate the site, maintain business and support records, administer subscriptions, document license issuance and entitlement history, resolve disputes, protect against fraud or abuse, and meet legal or accounting obligations.</p>
 
-      <h2>Security</h2>
-      <p class="muted">We use reasonable administrative, technical, and operational measures to protect site and customer information. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.</p>
+          <h2>Security</h2>
+          <p>We use reasonable administrative, technical, and operational measures to protect site and customer information. No method of transmission or storage is completely secure, so we cannot guarantee absolute security.</p>
 
-      <h2>Your choices</h2>
-      <p class="muted">You can choose whether to contact us and what information to include in your messages. If you want to update or correct information you previously sent, or if you have a privacy-related request, contact <a href="mailto:privacy@trustware.dev?subject=Privacy%20Request">privacy@trustware.dev</a>. If your request relates to Stripe-hosted billing or payment information, Stripe may also provide self-service or account-management options through its hosted billing tools.</p>
+          <h2>Your choices</h2>
+          <p>You can choose whether to contact us and what information to include in your messages. If you want to update or correct information you previously sent, or if you have a privacy-related request, contact <a class="inlineLink" href="mailto:privacy@trustware.dev?subject=Privacy%20Request">privacy@trustware.dev</a>. If your request relates to Stripe-hosted billing or payment information, Stripe may also provide self-service or account-management options through its hosted billing tools.</p>
 
-      <h2>Children</h2>
-      <p class="muted">trustware.dev is intended for business, developer, and software-purchase audiences. It is not directed to children.</p>
+          <h2>Children</h2>
+          <p>trustware.dev is intended for business, developer, and software-purchase audiences. It is not directed to children.</p>
 
-      <h2>Changes to this policy</h2>
-      <p class="muted">We may update this Privacy Policy from time to time by posting a revised version on this page and updating the "Last updated" date.</p>
+          <h2>Changes to this policy</h2>
+          <p>We may update this Privacy Policy from time to time by posting a revised version on this page and updating the "Last updated" date.</p>
 
-      <h2>Contact</h2>
-      <p class="muted">Privacy questions or requests can be sent to <a href="mailto:privacy@trustware.dev?subject=Privacy%20Question">privacy@trustware.dev</a>. General customer, licensing, and support contacts are available on the <a href="/contact/">contact page</a>.</p>
-
-    </div>
+          <h2>Contact</h2>
+          <p>Privacy questions or requests can be sent to <a class="inlineLink" href="mailto:privacy@trustware.dev?subject=Privacy%20Question">privacy@trustware.dev</a>. General customer, licensing, and support contacts are available on the <a class="inlineLink" href="/contact/">contact page</a>.</p>
+        </div>
+      </section>
+    </main>
 
     <div class="footer">
       <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
       <div>
         <a href="/about/">About</a> &middot;
+        <a href="/faq/">FAQ</a> &middot;
         <a href="/contact/">Contact</a> &middot;
         <a href="/privacy/">Privacy</a> &middot;
         <a href="/terms/">Terms</a>
