@@ -33,12 +33,15 @@
     body::before{
       content:"";
       position:fixed;
-      inset:0;
+      top:0;
+      left:0;
+      right:0;
+      height:min(46vh, 420px);
       pointer-events:none;
       background-image:url("/assets/logo/trustware-logo.png");
       background-repeat:no-repeat;
-      background-position:center center;
-      background-size:min(54vw, 650px) auto;
+      background-position:center 24px;
+      background-size:min(36vw, 380px) auto;
       opacity:.07;
       filter:saturate(.9) brightness(.86);
       z-index:0;
@@ -96,7 +99,7 @@
     .footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
     @media (max-width: 980px){
       nav{flex-wrap:wrap;justify-content:flex-end}
-      body::before{background-size:min(84vw, 430px) auto;opacity:.055}
+      body::before{height:min(38vh, 280px);background-size:min(62vw, 260px) auto;background-position:center 18px;opacity:.055}
       .hero{padding:30px 22px}
       .footer{flex-direction:column;align-items:flex-start}
     }
