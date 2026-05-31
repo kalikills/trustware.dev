@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Offer ROI Calculator Demo | Trustware Technologies</title>
+  <meta name="description" content="Interactive offer ROI calculator demo page." />
+  <link rel="icon" href="/assets/icons/favicon.ico?v=13">
+  <link rel="stylesheet" href="/assets/site.css" />
+  <style>
+    .calc-shell{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:6px;margin-bottom:12px}
+    .field label{font-weight:700;color:#d3def0}
+    .field input{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0e1320;color:#f0f5ff}
+    .result{display:grid;gap:10px}
+    .result-card{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);padding:12px}
+    .result-card strong{display:block;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .result-card span{font-size:28px;font-weight:800;color:#eef4ff}
+    .note{font-size:13px;color:var(--muted)}
+    @media (max-width:980px){.calc-shell{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/"><img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" /><span>Trustware Technologies</span></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a class="active" href="/work/">Work</a>
+        <a href="/devvault/">DevVault</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="kicker">Work Demo • Offer ROI Calculator</div>
+        <h1>Offer ROI Calculator</h1>
+        <p class="sub">Simple interactive calculator for quick pricing and margin conversations during offer planning.</p>
+        <div class="cta-row"><a class="btn" href="/work/">Back to Work</a><a class="btn primary" href="/contact/">Ask for something like this</a></div>
+      </section>
+
+      <section class="section panel contact-block calc-shell">
+        <div class="card" style="margin:0;">
+          <h3>Inputs</h3>
+          <div class="field"><label for="price">Offer price ($)</label><input id="price" type="number" min="0" step="1" value="750" /></div>
+          <div class="field"><label for="cost">Fulfillment cost per sale ($)</label><input id="cost" type="number" min="0" step="1" value="220" /></div>
+          <div class="field"><label for="sales">Expected sales (count)</label><input id="sales" type="number" min="0" step="1" value="10" /></div>
+          <p class="note">Local demo only. This is a planning aid, not financial advice.</p>
+        </div>
+
+        <div class="card" style="margin:0;">
+          <h3>Outputs</h3>
+          <div class="result">
+            <div class="result-card"><strong>Gross revenue</strong><span id="gross">$0</span></div>
+            <div class="result-card"><strong>Estimated profit</strong><span id="profit">$0</span></div>
+            <div class="result-card"><strong>Margin</strong><span id="margin">0%</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Trustware Technologies • TSW Technologies LLC</div>
+      <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const fmtMoney = (n) => '$' + Number(n).toLocaleString(undefined, {maximumFractionDigits: 2});
+    function recalc(){
+      const price = Number($('price').value || 0);
+      const cost = Number($('cost').value || 0);
+      const sales = Number($('sales').value || 0);
+      const gross = price * sales;
+      const totalCost = cost * sales;
+      const profit = gross - totalCost;
+      const margin = gross > 0 ? (profit / gross) * 100 : 0;
+      $('gross').textContent = fmtMoney(gross);
+      $('profit').textContent = fmtMoney(profit);
+      $('margin').textContent = margin.toFixed(1) + '%';
+    }
+    ['price','cost','sales'].forEach(id => $(id).addEventListener('input', recalc));
+    recalc();
+    $('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

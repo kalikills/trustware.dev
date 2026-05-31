@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automation Script Example | Trustware Technologies</title>
+  <meta name="description" content="Workflow example showing CSV/Excel automation outcomes." />
+  <link rel="icon" href="/assets/icons/favicon.ico?v=13">
+  <link rel="stylesheet" href="/assets/site.css" />
+  <style>
+    .flow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .lane{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.025);padding:14px}
+    .lane h3{margin:0 0 8px}
+    .lane ul{margin:0;padding-left:18px;color:var(--muted)}
+    .lane li{margin:8px 0}
+    .code-box{border:1px solid #2b364b;border-radius:12px;background:#0d1320;padding:14px;overflow:auto}
+    .code-box pre{margin:0;font-family:Consolas, "SFMono-Regular", Menlo, monospace;font-size:13px;color:#dbe7ff;line-height:1.5}
+    .use-cases{margin-top:14px}
+    .use-cases li{margin:8px 0;color:var(--muted)}
+    @media (max-width:980px){.flow{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/"><img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" /><span>Trustware Technologies</span></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a class="active" href="/work/">Work</a>
+        <a href="/devvault/">DevVault</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="kicker">Work Demo • Automation Script Example</div>
+        <h1>CSV and Excel Automation Workflow Example</h1>
+        <p class="sub">A practical example of how repetitive spreadsheet tasks can be standardized into a repeatable script lane.</p>
+        <div class="cta-row"><a class="btn" href="/work/">Back to Work</a><a class="btn primary" href="/contact/">Ask for something like this</a></div>
+      </section>
+
+      <section class="section panel contact-block flow">
+        <article class="lane">
+          <h3>Before automation</h3>
+          <ul>
+            <li>Export CSV files from multiple systems</li>
+            <li>Manually clean columns and naming inconsistencies</li>
+            <li>Manually merge rows and remove duplicates</li>
+            <li>Build weekly summary by hand in Excel</li>
+            <li>Risk of missed rows and inconsistent formatting</li>
+          </ul>
+        </article>
+        <article class="lane">
+          <h3>After automation</h3>
+          <ul>
+            <li>Drop files into a single input folder</li>
+            <li>Run one command for cleanup and merge</li>
+            <li>Generate standardized summary output</li>
+            <li>Produce repeatable naming/report format</li>
+            <li>Reduce manual time and error risk</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <article class="card span-12">
+          <h3>Code-style flow block (illustrative)</h3>
+          <div class="code-box">
+<pre># Example workflow (illustrative)
+load_csv_folder("incoming/")
+normalize_headers()
+trim_whitespace()
+standardize_dates("MM/DD/YYYY")
+merge_records(key="client_id")
+remove_duplicates()
+calculate_summary_fields()
+write_csv("output/cleaned_report.csv")
+write_excel("output/weekly_summary.xlsx")</pre>
+          </div>
+          <h3 class="use-cases">Sample use cases</h3>
+          <ul class="use-cases">
+            <li>Weekly lead-source summaries for agencies</li>
+            <li>Invoice and fulfillment reconciliation</li>
+            <li>Turnover cleanup operations reporting</li>
+            <li>Client export normalization before dashboard import</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Trustware Technologies • TSW Technologies LLC</div>
+      <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

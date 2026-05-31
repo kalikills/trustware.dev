@@ -3,20 +3,361 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DevVault | Trustware Technologies</title>
-  <meta name="description" content="DevVault is a Trustware Technologies product/work example focused on local backup and restore safety tooling." />
+  <title>DevVault - Trustware Technologies</title>
+  <meta name="description" content="DevVault launch tiers: Core, Pro, and Business annual seat subscriptions with signed offline licensing and NAS-first Business protection." />
+
   <link rel="icon" href="/assets/icons/favicon.ico?v=13">
-  <link rel="stylesheet" href="/assets/site.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/icon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+
+  <style>
+    :root{
+      --bg:#09090b;
+      --panel:#111114;
+      --panel-strong:#17171c;
+      --text:#f0eef2;
+      --muted:#bdb8c2;
+      --soft:#8e8794;
+      --border:#2b2830;
+      --red:#d81e1e;
+      --red-soft:rgba(216,30,30,.16);
+      --green:#35d168;
+      --gold:#f2cf45;
+      --early-gold:#c97c4a;
+      --early-gold-deep:#c57c52;
+      --shadow:0 18px 55px rgba(0,0,0,.48);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      position:relative;
+      font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1000px 520px at 50% 0%, rgba(216,30,30,.20), transparent 58%),
+        linear-gradient(180deg, #16080d 0%, var(--bg) 34%, #050506 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image:url("/assets/logo/trustware-logo.png");
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:min(54vw, 650px) auto;
+      opacity:.075;
+      filter:saturate(.9) brightness(.86);
+      z-index:0;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:30px 18px 70px;position:relative;z-index:1}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 34px}
+    .brand{display:flex;align-items:center;gap:13px;color:var(--text);text-decoration:none}
+    .brand img{height:48px;width:auto}
+    .brand .name{font-weight:750;letter-spacing:.3px}
+    nav{display:flex;gap:16px;color:var(--muted);font-size:15px}
+    nav a{padding:8px 10px;border:1px solid transparent;border-radius:12px}
+    nav a:hover{border-color:var(--border);background:rgba(255,255,255,.03)}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.09);
+      background:
+        linear-gradient(135deg, rgba(216,30,30,.18), rgba(255,255,255,.025) 48%, rgba(0,0,0,.28)),
+        rgba(255,255,255,.025);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:44px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:auto -120px -180px auto;
+      width:520px;
+      height:520px;
+      background:radial-gradient(circle, rgba(216,30,30,.22), transparent 65%);
+      pointer-events:none;
+    }
+    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+    h1{margin:12px 0 12px;font-size:clamp(44px,7vw,78px);line-height:.95;letter-spacing:-.05em}
+    .hero .sub{max-width:760px;margin:0;color:var(--muted);font-size:clamp(18px,2.2vw,24px)}
+    .heroFacts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .fact{
+      border-left:2px solid rgba(216,30,30,.62);
+      background:rgba(255,255,255,.045);
+      color:var(--muted);
+      border-radius:6px;
+      padding:7px 11px;
+      font-size:13px;
+      font-weight:700;
+    }
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:12px 18px;
+      border-radius:15px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.035);
+      color:var(--text);
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .btnPrimary{
+      border-color:rgba(216,30,30,.62);
+      background:linear-gradient(180deg, rgba(216,30,30,.26), rgba(216,30,30,.11));
+    }
+    .btnMuted{
+      border-color:rgba(242,207,69,.26);
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+    }
+    .section{margin-top:28px}
+    .sectionHead{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}
+    .section h2{margin:0;font-size:clamp(28px,4vw,42px);line-height:1;letter-spacing:-.035em}
+    .sectionLead{max-width:720px;margin:8px 0 0;color:var(--muted)}
+    .tierGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .earlyAccessHead{
+      margin-bottom:18px;
+      text-align:center;
+    }
+    .earlyAccessHead h2{
+      font-size:clamp(42px,7vw,78px);
+      line-height:.92;
+      letter-spacing:-.06em;
+      color:var(--early-gold);
+      text-shadow:0 0 18px rgba(201, 124, 74, 0.24);
+    }
+    .earlyAccessWrap{display:block}
+    .tierEarly{
+      position:relative;
+      overflow:hidden;
+      min-height:auto;
+      border:1px solid rgba(255, 45, 45, 0.3);
+      background:linear-gradient(145deg, #0b0b0f, #141419);
+      box-shadow:
+        0 0 25px rgba(255, 45, 45, 0.15),
+        0 30px 70px rgba(0,0,0,.34);
+      padding:30px;
+    }
+    .tierEarly::before{
+      content:"Early Access";
+      position:absolute;
+      top:18px;
+      right:22px;
+      font-size:clamp(32px,7vw,86px);
+      font-weight:900;
+      letter-spacing:-.06em;
+      color:rgba(255,255,255,.05);
+      pointer-events:none;
+      text-transform:uppercase;
+    }
+    .tierEarly .tierTop{
+      align-items:flex-start;
+      margin-bottom:8px;
+    }
+    .tierEarly h3{
+      font-size:clamp(30px,5vw,46px);
+      line-height:.95;
+    }
+    .tierEarly .tag{
+      background:rgba(255, 45, 45, 0.15);
+      color:#ff4d4d;
+      border:1px solid rgba(255, 45, 45, 0.4);
+    }
+    .tierEarly .price{
+      margin:8px 0 12px;
+      font-size:clamp(68px,11vw,116px);
+      line-height:.9;
+      color:var(--early-gold);
+      text-shadow:0 0 22px rgba(201, 124, 74, 0.28);
+    }
+    .tierEarly .price span{
+      display:block;
+      margin-top:10px;
+      font-size:clamp(20px,2.2vw,28px);
+      font-weight:800;
+      letter-spacing:.01em;
+      color:#b0b0b0;
+    }
+    .tierEarly ul{
+      margin:10px 0 26px 22px;
+      max-width:760px;
+      font-size:clamp(18px,2vw,22px);
+      color:#b0b0b0;
+    }
+    .tierEarly li{
+      margin:10px 0;
+    }
+    .tierEarly .btn{
+      width:min(420px,100%);
+      min-height:58px;
+      font-size:22px;
+      background:linear-gradient(90deg, #ff2d2d, #ff0000);
+      color:#ffffff;
+      border:none;
+      box-shadow:0 16px 36px rgba(255, 45, 45, 0.22);
+      transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+    .tierEarly .btn:hover{
+      background:linear-gradient(90deg, #ff4d4d, #ff1a1a);
+      transform:scale(1.02);
+    }
+    .tierEarly .btn:focus-visible{
+      outline:2px solid rgba(255,255,255,.28);
+      outline-offset:3px;
+    }
+    .earlyAccessMeta{
+      margin-top:16px;
+      color:#b0b0b0;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+    .tier{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    .tierBusiness{
+      border-color:rgba(216,30,30,.48);
+      box-shadow:0 0 0 1px rgba(216,30,30,.12) inset;
+    }
+    .tierTop{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .tier h3{margin:0;font-size:23px}
+    .tag{border:1px solid rgba(255,255,255,.1);color:var(--muted);border-radius:999px;padding:5px 8px;font-size:12px;font-weight:800}
+    .price{margin:18px 0 8px;font-size:40px;font-weight:900;letter-spacing:-.04em}
+    .price span{display:block;margin-top:2px;font-size:13px;font-weight:800;letter-spacing:.02em;color:var(--muted)}
+    .tier ul{margin:12px 0 20px 18px;color:var(--muted);padding:0}
+    .tier li{margin:8px 0}
+    .tier .btn{margin-top:auto;width:100%}
+    .tierNote{margin:10px 0 0;color:var(--soft);font-size:13px}
+    .tierNote a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    .nasNotice{
+      border:1px solid rgba(242,207,69,.32);
+      background:linear-gradient(135deg, rgba(242,207,69,.10), rgba(216,30,30,.08));
+      border-radius:var(--radius);
+      padding:20px;
+      color:var(--muted);
+    }
+    .nasNotice strong{display:block;color:var(--gold);font-size:18px;margin-bottom:6px}
+    .evidenceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .launchVideoCard{
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      box-shadow:0 18px 44px rgba(0,0,0,.28);
+    }
+    .launchVideo{
+      display:block;
+      width:100%;
+      height:auto;
+      background:#050506;
+    }
+    .launchVideoMeta{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      padding:16px 18px 18px;
+      border-top:1px solid rgba(255,255,255,.07);
+      background:linear-gradient(180deg, rgba(255,255,255,.015), rgba(216,30,30,.04));
+    }
+    .launchVideoMeta div{
+      color:var(--muted);
+      font-size:14px;
+    }
+    .launchVideoMeta strong{
+      display:block;
+      margin-bottom:4px;
+      color:var(--text);
+      font-size:15px;
+    }
+    figure{
+      margin:0;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.025);
+      border-radius:var(--radius);
+      box-shadow:0 12px 36px rgba(0,0,0,.28);
+    }
+    figure img{display:block;width:100%;height:auto;background:#050506}
+    figcaption{padding:14px 16px;color:var(--muted);font-size:14px}
+    figcaption strong{display:block;color:var(--text);font-size:16px;margin-bottom:4px}
+    .flowGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .flowStep{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.025);
+      border-radius:18px;
+      padding:16px;
+      color:var(--muted);
+    }
+    .flowStep strong{display:block;color:var(--text);margin-bottom:6px}
+    .buyerNote{
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(216,30,30,.06));
+      border-radius:var(--radius);
+      padding:20px 22px;
+      color:var(--text);
+      font-size:18px;
+      line-height:1.65;
+      box-shadow:0 14px 38px rgba(0,0,0,.22);
+    }
+    .buyerNote strong{color:var(--text);font-weight:900}
+    .checkoutStatus{
+      border:1px solid rgba(216,30,30,.34);
+      background:rgba(216,30,30,.08);
+      border-radius:var(--radius);
+      padding:18px;
+      color:var(--muted);
+    }
+    .checkoutStatus strong{color:var(--text)}
+    .footer{
+      margin-top:34px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      color:var(--muted);
+      font-size:13px;
+      padding-top:18px;
+    }
+    .footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+    @media (max-width: 980px){
+      .hero{padding:30px 22px}
+      .tierGrid,.evidenceGrid,.flowGrid{grid-template-columns:1fr}
+      .launchVideoMeta{grid-template-columns:1fr}
+      figure img{height:auto}
+      nav{flex-wrap:wrap;justify-content:flex-end}
+      body::before{background-size:min(84vw, 430px) auto;opacity:.055}
+    }
+  </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="/"><img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" /><span>Trustware Technologies</span></a>
+      <a class="brand" href="/" aria-label="Trustware Technologies home">
+        <img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" />
+        <span class="name">Trustware Technologies</span>
+      </a>
       <nav>
         <a href="/">Home</a>
         <a href="/services/">Services</a>
         <a href="/work/">Work</a>
-        <a class="active" href="/devvault/">DevVault</a>
+        <a href="/devvault/">DevVault</a>
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
       </nav>
@@ -24,43 +365,202 @@
 
     <main>
       <section class="hero">
-        <div class="kicker">Product / Work Example</div>
+        <div class="eyebrow">Launch authority &bull; Annual seat subscriptions</div>
         <h1>DevVault</h1>
-        <p class="sub">DevVault is a Trustware Technologies product focused on local backup and restore safety tooling. It is presented here as a practical product/work example within the broader Trustware service site.</p>
-        <div class="cta-row">
-          <a class="btn" href="/work/">Back to Work / Portfolio</a>
-          <a class="btn primary" href="/contact/">Ask about similar tooling</a>
+        <p class="sub">
+          Development integrity tooling with signed offline licensing, protected backup and restore workflows,
+          and Business-grade NAS governance for teams that need shared vault authority.
+        </p>
+        <div class="heroFacts">
+          <div class="fact">Core: $99 / year</div>
+          <div class="fact">Pro: $249 / year</div>
+          <div class="fact">Business: $499 / year</div>
+        </div>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="#pricing">View pricing</a>
+          <a class="btn" href="#demo">Watch launch demo</a>
+          <a class="btn" href="/faq/">Read FAQ</a>
+          <a class="btn" href="https://billing.stripe.com/p/login/4gM3cogre7Xu5jP7dn77O00">Manage Billing</a>
+          <a class="btn" href="/contact/">Talk to sales</a>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="sectionHead earlyAccessHead">
+          <div>
+            <h2>Lock in Early Access - $49</h2>
+          </div>
+        </div>
+
+        <div class="earlyAccessWrap">
+          <article class="tier tierEarly">
+            <div class="tierTop">
+              <h3>Lock in Early Access - $49</h3>
+              <span class="tag">Early release offer</span>
+            </div>
+            <div class="price">$49<span>Full core access for 12 months</span></div>
+            <ul>
+              <li>Protect your data with real coverage validation</li>
+              <li>Full core feature access for 12 months</li>
+              <li>Receive all updates during early access</li>
+              <li>Requires your own backup drive or equivalent local storage target</li>
+              <li>Upgrade anytime</li>
+            </ul>
+            <a class="btn btnPrimary" href="https://buy.stripe.com/fZubIU4Iw7Xu5jP55f77O0o" data-checkout="early-access">Get Access Now</a>
+            <div class="earlyAccessMeta">Instant access after purchase<br>Limited early release pricing</div>
+          </article>
+        </div>
+
+        <div class="sectionHead">
+          <div>
+            <h2>Standard Pricing</h2>
+            <p class="sectionLead">Annual pricing after early access.</p>
+          </div>
+        </div>
+
+        <div class="tierGrid">
+          <article class="tier">
+            <div class="tierTop">
+              <h3>Core</h3>
+              <span class="tag">Individual protection</span>
+            </div>
+            <div class="price">$99<span>per year</span></div>
+            <ul>
+              <li>Backup and restore engine</li>
+              <li>Snapshot system and backup queue</li>
+              <li>Trustware safety checks</li>
+              <li>Full scan system</li>
+              <li>Removable vault workflows supported</li>
+              <li>Requires your own backup drive or equivalent local storage target</li>
+            </ul>
+            <a class="btn btnPrimary" href="https://buy.stripe.com/7sY28ka2Q1z6fYtapz77O0p" data-checkout="core">Buy Core</a>
+          </article>
+
+          <article class="tier">
+            <div class="tierTop">
+              <h3>Pro</h3>
+              <span class="tag">Advanced recovery evidence</span>
+            </div>
+            <div class="price">$249<span>per year</span></div>
+            <ul>
+              <li>Everything in Core</li>
+              <li>Advanced scan reports</li>
+              <li>Snapshot comparison</li>
+              <li>Recovery audit reports</li>
+              <li>Report export workflows</li>
+              <li>Requires your own backup drive or equivalent local storage target</li>
+            </ul>
+            <a class="btn btnPrimary" href="https://buy.stripe.com/aFacMY2Ao0v213z41b77O0q" data-checkout="pro">Buy Pro</a>
+          </article>
+
+          <article class="tier tierBusiness">
+            <div class="tierTop">
+              <h3>Business</h3>
+              <span class="tag">NAS-first governance</span>
+            </div>
+            <div class="price">$499<span>per year</span></div>
+            <ul>
+              <li>Everything in Pro</li>
+              <li>Organization audit and governance visibility</li>
+              <li>Seat administration tools</li>
+              <li>Fleet protection state and NAS health</li>
+              <li>Minimum 2 seats required for purchase</li>
+              <li>Requires NAS, SMB UNC path, or network share</li>
+            </ul>
+            <div class="tierNote">Minimum 2 seats required.</div>
+            <a class="btn btnPrimary" href="https://buy.stripe.com/00w28k0sggu07rXapz77O0r" data-checkout="business">Buy Business</a>
+          </article>
         </div>
       </section>
 
       <section class="section">
-        <div class="grid">
-          <article class="card span-6">
-            <h3>What it is</h3>
-            <p>Local backup/restore safety tooling designed to help users verify coverage and recovery readiness in practical workflows.</p>
-          </article>
-          <article class="card span-6">
-            <h3>Who it helps</h3>
-            <p>Users and small teams who need stronger local backup discipline and clearer restore confidence.</p>
-          </article>
-          <article class="card span-12">
-            <h3>What problem it solves</h3>
-            <p>Reduces uncertainty around whether local backups are actually usable when recovery is needed.</p>
-          </article>
+        <div class="nasNotice">
+          <strong>Business is NAS-first.</strong>
+          Business protection requires a customer-managed NAS or network share. DevVault does not operate customer backup storage, and Business backup is blocked until a valid network vault target is configured. If you are unsure whether your environment is ready, <a href="/contact/">talk to sales</a> before checkout.
         </div>
       </section>
 
-      <section class="section panel contact-block">
-        <h2>Scope and positioning note</h2>
-        <p class="lead">This page does not claim enterprise readiness, large-scale customer rollout, or live market traction. DevVault is included as a concrete product/work example in the Trustware Technologies portfolio.</p>
+      <section class="section">
+        <div class="buyerNote">
+          <strong>What happens after checkout:</strong>
+          Checkout creates your annual DevVault subscription. After payment, DevVault sends a signed <code>.dvlic</code> license to the same email you used at checkout, attached at the bottom of that email. If you purchase Business, have your NAS or network share ready before install, because Business backup will not run until an admin configures a network vault. Existing customers can manage billing from the <a href="https://billing.stripe.com/p/login/4gM3cogre7Xu5jP7dn77O00">customer billing portal</a>.
+        </div>
       </section>
+
+      <section class="section">
+        <div class="sectionHead">
+          <div>
+            <h2>License Delivery</h2>
+            <p class="sectionLead">What buyers receive after checkout, and what DevVault requires before protected actions can begin.</p>
+          </div>
+        </div>
+        <div class="flowGrid">
+          <div class="flowStep"><strong>1. Stripe Checkout</strong>Your purchase starts an annual DevVault subscription for the plan you selected.</div>
+          <div class="flowStep"><strong>2. Signed license issuance</strong>DevVault generates a signed <code>.dvlic</code> license for that purchase and records the license server-side.</div>
+          <div class="flowStep"><strong>3. Email delivery</strong>Your license is emailed to the same address used at checkout, with the installer download and license attachment included.</div>
+          <div class="flowStep"><strong>4. Runtime requirements</strong>Core and Pro can activate locally. Business requires an admin-configured NAS or network share before backup protection is allowed to run.</div>
+        </div>
+      </section>
+
+      <section class="section" id="demo">
+        <div class="sectionHead">
+          <div>
+            <h2>Launch Demo</h2>
+            <p class="sectionLead">This is the current first-launch DevVault product demo with Andrew narration, built from real runtime captures in the launch workspace.</p>
+          </div>
+        </div>
+        <div class="launchVideoCard">
+          <video class="launchVideo" controls playsinline preload="metadata" poster="/assets/img/devvault/dashboard-protected.png">
+            <source src="/assets/video/devvault/devvault-first-launch-andrew.mp4" type="video/mp4">
+            Your browser does not support embedded video. You can still access the DevVault launch demo directly.
+          </video>
+          <div class="launchVideoMeta">
+            <div><strong>What it shows</strong>License activation, protection enforcement, authoritative vault setup, continuous scanning, validation, and recovery proof.</div>
+            <div><strong>What it's built from</strong>Real DevVault Business and NAS-first runtime captures from the current launch workspace. No mockups.</div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <div class="footer">
-      <div>© <span id="y"></span> Trustware Technologies • TSW Technologies LLC</div>
-      <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+      <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
+      <div>
+        <a href="/about/">About</a> &middot;
+        <a href="/faq/">FAQ</a> &middot;
+        <a href="/contact/">Contact</a> &middot;
+        <a href="/privacy/">Privacy</a> &middot;
+        <a href="/terms/">Terms</a>
+      </div>
     </div>
   </div>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+
+  <script>
+  const checkoutLinks = {
+      "early-access": "https://buy.stripe.com/fZubIU4Iw7Xu5jP55f77O0o",
+      core: "https://buy.stripe.com/7sY28ka2Q1z6fYtapz77O0p",
+      pro: "https://buy.stripe.com/aFacMY2Ao0v213z41b77O0q",
+      business: "https://buy.stripe.com/00w28k0sggu07rXapz77O0r"
+    };
+
+    const checkoutLabels = {
+      "early-access": "Get Access Now",
+      core: "Buy Core",
+      pro: "Buy Pro",
+      business: "Buy Business"
+    };
+
+    for (const [tier, url] of Object.entries(checkoutLinks)) {
+      const link = document.querySelector(`[data-checkout="${tier}"]`);
+      if (!link || !url) {
+        continue;
+      }
+
+      link.href = url;
+      link.textContent = checkoutLabels[tier];
+    }
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClearPath Cleanup Demo | Trustware Technologies</title>
+  <meta name="description" content="Client-style landing page demo for a local cleanup service." />
+  <link rel="icon" href="/assets/icons/favicon.ico?v=13">
+  <link rel="stylesheet" href="/assets/site.css" />
+  <style>
+    .preview-shell{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#0f1320}
+    .preview-hero{padding:42px 28px;background:linear-gradient(155deg,#0f2842,#0f1728 55%,#152834)}
+    .preview-hero h2{margin:0;font-size:40px;line-height:1.05}
+    .preview-hero p{color:#c5d2e4;max-width:60ch}
+    .chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .chip{padding:5px 10px;border-radius:999px;border:1px solid #35527a;color:#c4d8f1;font-size:12px}
+    .preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px}
+    .preview-card{border:1px solid #2a3a56;border-radius:12px;padding:14px;background:#12192b;color:#c6d4e8}
+    .preview-card h3{margin:0 0 8px;color:#edf3fd;font-size:18px}
+    .preview-cta{margin:14px 16px 18px;padding:16px;border:1px solid #2e4f77;border-radius:12px;background:#132238;color:#d8e6f8}
+    .preview-cta strong{display:block;margin-bottom:8px;color:#fff}
+    @media (max-width:980px){.preview-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/"><img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" /><span>Trustware Technologies</span></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a class="active" href="/work/">Work</a>
+        <a href="/devvault/">DevVault</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="kicker">Work Demo • Local Service Landing Page</div>
+        <h1>ClearPath Cleanup - Client Preview</h1>
+        <p class="sub">A realistic static landing page example for a local cleanup company. Built as a fast client-preview style deliverable.</p>
+        <div class="cta-row"><a class="btn" href="/work/">Back to Work</a><a class="btn primary" href="/contact/">Ask for something like this</a></div>
+      </section>
+
+      <section class="section preview-shell" aria-label="ClearPath Cleanup preview">
+        <div class="preview-hero">
+          <h2>ClearPath Cleanup</h2>
+          <p>Junk removal, property cleanout, and landlord turnover support for homeowners, landlords, and property managers.</p>
+          <div class="chip-row">
+            <span class="chip">Same-week scheduling</span>
+            <span class="chip">Photo-ready results</span>
+            <span class="chip">Free cleanup quote</span>
+          </div>
+        </div>
+        <div class="preview-grid">
+          <article class="preview-card"><h3>Services</h3><p>Junk removal, move-out cleanups, garage and yard clear-outs, and property turnover cleanup.</p></article>
+          <article class="preview-card"><h3>Why choose us</h3><p>Clear scope, reliable arrival windows, and consistent communication from quote to completion.</p></article>
+          <article class="preview-card"><h3>3-step process</h3><p>1) Request quote 2) Approve scope 3) We clean and confirm completion.</p></article>
+        </div>
+        <div class="preview-cta">
+          <strong>Request a Free Cleanup Quote</strong>
+          <div>Tell us the property type, timeline, and photos if available. We’ll respond with scoped next steps.</div>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Trustware Technologies • TSW Technologies LLC</div>
+      <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

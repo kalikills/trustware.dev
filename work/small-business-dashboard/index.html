@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Small Business Dashboard Demo | Trustware Technologies</title>
+  <meta name="description" content="Static small business dashboard visual demo." />
+  <link rel="icon" href="/assets/icons/favicon.ico?v=13">
+  <link rel="stylesheet" href="/assets/site.css" />
+  <style>
+    .dash-wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .kpi{grid-column:span 3;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03);padding:14px}
+    .kpi strong{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .kpi span{display:block;margin-top:6px;font-size:30px;font-weight:800}
+    .panel-card{grid-column:span 6;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);padding:14px}
+    .panel-card h3{margin:0 0 10px}
+    .bar{height:10px;border-radius:999px;background:#1a2537;overflow:hidden;margin:8px 0}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,#2f78ff,#4ea1ff)}
+    .task-list,.activity-list{margin:0;padding-left:18px;color:var(--muted)}
+    .task-list li,.activity-list li{margin:8px 0}
+    @media (max-width:980px){.kpi,.panel-card{grid-column:span 12}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/"><img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" /><span>Trustware Technologies</span></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a class="active" href="/work/">Work</a>
+        <a href="/devvault/">DevVault</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="kicker">Work Demo • Small Business Dashboard</div>
+        <h1>Small Business Operations Dashboard</h1>
+        <p class="sub">A visual mockup for teams that need quick visibility into leads, active jobs, revenue pacing, tasks, and recent activity.</p>
+        <div class="cta-row"><a class="btn" href="/work/">Back to Work</a><a class="btn primary" href="/contact/">Ask for something like this</a></div>
+      </section>
+
+      <section class="section panel contact-block dash-wrap" aria-label="Dashboard preview">
+        <article class="kpi"><strong>Leads (7d)</strong><span>42</span></article>
+        <article class="kpi"><strong>Active jobs</strong><span>18</span></article>
+        <article class="kpi"><strong>Revenue (MTD)</strong><span>$24.8K</span></article>
+        <article class="kpi"><strong>Open tasks</strong><span>11</span></article>
+
+        <article class="panel-card">
+          <h3>Pipeline health</h3>
+          <div class="small">Qualified leads</div>
+          <div class="bar"><i style="width:74%"></i></div>
+          <div class="small">Jobs scheduled</div>
+          <div class="bar"><i style="width:61%"></i></div>
+          <div class="small">Jobs completed</div>
+          <div class="bar"><i style="width:52%"></i></div>
+        </article>
+
+        <article class="panel-card">
+          <h3>Task queue</h3>
+          <ul class="task-list">
+            <li>Follow up on 5 unquoted requests</li>
+            <li>Confirm Monday schedule windows</li>
+            <li>Send turnover completion summaries</li>
+            <li>Review ad spend vs booked jobs</li>
+          </ul>
+        </article>
+
+        <article class="panel-card" style="grid-column:span 12;">
+          <h3>Recent activity</h3>
+          <ul class="activity-list">
+            <li>New landlord request: 3-unit turnover cleanup (priority high)</li>
+            <li>Quote accepted: estate cleanout package ($2,200)</li>
+            <li>Team update: 2 jobs moved to completed</li>
+            <li>Lead source note: referral channel conversion up 18%</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Trustware Technologies • TSW Technologies LLC</div>
+      <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
