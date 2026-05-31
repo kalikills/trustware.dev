@@ -118,56 +118,83 @@ h1{margin:12px 0 10px;font-size:clamp(34px,5.7vw,56px);line-height:1.03;letter-s
   margin:0 0 12px;
   border:1px solid var(--line);
   border-radius:12px;
-  min-height:92px;
+  min-height:106px;
   position:relative;
   overflow:hidden;
-  background:linear-gradient(140deg, rgba(216,30,30,.20), rgba(255,255,255,.01) 56%, rgba(242,207,69,.09));
+  background:
+    radial-gradient(140% 130% at 0% 0%, rgba(216,30,30,.22), transparent 58%),
+    radial-gradient(120% 120% at 100% 100%, rgba(242,207,69,.12), transparent 60%),
+    linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.01) 52%, rgba(0,0,0,.16));
+}
+.mock-preview::before{
+  content:"";
+  position:absolute;
+  left:10px;
+  right:10px;
+  top:10px;
+  height:12px;
+  border-radius:999px;
+  background:
+    radial-gradient(circle at 8px 50%, rgba(255,255,255,.35) 0 2px, transparent 3px),
+    radial-gradient(circle at 22px 50%, rgba(255,255,255,.25) 0 2px, transparent 3px),
+    radial-gradient(circle at 36px 50%, rgba(255,255,255,.18) 0 2px, transparent 3px),
+    linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
 }
 .mock-preview::after{
   content:"";
   position:absolute;
   left:12px;
   right:12px;
-  top:16px;
-  height:9px;
-  border-radius:999px;
-  background:rgba(255,255,255,.2);
-  box-shadow:0 18px 0 rgba(255,255,255,.13), 0 36px 0 rgba(255,255,255,.1);
-}
-.mock-preview.dashboard{
-  background:linear-gradient(160deg, rgba(216,30,30,.20), rgba(242,207,69,.10));
-}
-.mock-preview.dashboard::after{
-  top:14px;
-  height:62px;
-  border-radius:10px;
-  box-shadow:none;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.16) 0 33%, transparent 33% 36%, rgba(255,255,255,.1) 36% 66%, transparent 66% 69%, rgba(255,255,255,.13) 69% 100%),
-    linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.04));
-}
-.mock-preview.calculator{
-  background:linear-gradient(155deg, rgba(216,30,30,.24), rgba(0,0,0,.2));
-}
-.mock-preview.calculator::after{
-  top:14px;
-  height:58px;
+  top:28px;
+  bottom:12px;
   border-radius:9px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.06)),
-    linear-gradient(90deg, rgba(255,255,255,.12) 0 49%, transparent 49% 51%, rgba(255,255,255,.12) 51% 100%);
-  box-shadow:none;
+    linear-gradient(90deg, rgba(255,255,255,.12) 0 58%, transparent 58% 62%, rgba(255,255,255,.08) 62% 100%),
+    linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);
 }
-.mock-preview.automation{
-  background:linear-gradient(145deg, rgba(242,207,69,.20), rgba(216,30,30,.12));
+.mock-preview.dashboard{
+  background:
+    radial-gradient(150% 130% at 15% 0%, rgba(216,30,30,.20), transparent 62%),
+    radial-gradient(120% 120% at 95% 95%, rgba(242,207,69,.12), transparent 65%),
+    linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.01) 56%, rgba(0,0,0,.18));
 }
-.mock-preview.automation::after{
-  top:14px;
-  height:58px;
+.mock-preview.dashboard::after{
+  top:28px;
+  bottom:12px;
   border-radius:8px;
   background:
-    repeating-linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.16) 6px, transparent 6px, transparent 13px);
-  box-shadow:none;
+    linear-gradient(90deg, rgba(255,255,255,.11) 0 31%, transparent 31% 34%, rgba(255,255,255,.08) 34% 67%, transparent 67% 70%, rgba(255,255,255,.10) 70% 100%),
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+}
+.mock-preview.calculator{
+  background:
+    radial-gradient(130% 120% at 5% 0%, rgba(216,30,30,.23), transparent 58%),
+    linear-gradient(155deg, rgba(255,255,255,.05), rgba(0,0,0,.2));
+}
+.mock-preview.calculator::after{
+  top:28px;
+  bottom:12px;
+  border-radius:9px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03)),
+    linear-gradient(90deg, rgba(255,255,255,.09) 0 48%, transparent 48% 52%, rgba(255,255,255,.09) 52% 100%);
+}
+.mock-preview.automation{
+  background:
+    radial-gradient(135% 120% at 0% 0%, rgba(242,207,69,.20), transparent 56%),
+    radial-gradient(130% 130% at 100% 100%, rgba(216,30,30,.16), transparent 64%),
+    linear-gradient(145deg, rgba(255,255,255,.05), rgba(0,0,0,.16));
+}
+.mock-preview.automation::after{
+  top:28px;
+  bottom:12px;
+  border-radius:8px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.08), rgba(255,255,255,.04)),
+    repeating-linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.12) 4px, transparent 4px, transparent 10px);
 }
 .checklist{margin:10px 0 0 18px;color:var(--muted)}
 .checklist li{margin:6px 0}
