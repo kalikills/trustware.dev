@@ -3,227 +3,68 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - Trustware Technologies</title>
-  <meta name="description" content="Contact Trustware Technologies for company, sales, support, licensing, and privacy inquiries." />
+  <title>Contact | Trustware Technologies</title>
+  <meta name="description" content="Contact Trustware Technologies for practical build requests, workflow fixes, and agency overflow tasks." />
   <link rel="icon" href="/assets/icons/favicon.ico?v=13">
-  <style>
-    :root{--bg:#0b0b0d;--panel:#121217;--text:#e9e9ee;--muted:#b7b7c3;--border:#23232a;--accent:#d81e1e;--radius:18px;--max:1080px}
-    *{box-sizing:border-box}
-    body{margin:0;position:relative;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";background:
-      radial-gradient(circle at top, rgba(216,30,30,.16), transparent 42%),
-      linear-gradient(180deg,#1c070a 0%, #0b0b0d 24%, #0b0b0d 100%);
-      color:var(--text);line-height:1.6}
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background-image:url("/assets/logo/trustware-logo.png");
-      background-repeat:no-repeat;
-      background-position:center center;
-      background-size:min(52vw, 700px) auto;
-      opacity:.05;
-      filter:saturate(.88) brightness(.9);
-      z-index:0
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:30px 18px 70px;position:relative;z-index:1}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 0 30px}
-    .brand{display:flex;align-items:center;gap:13px;color:var(--text);text-decoration:none}
-    .brand img{height:48px;width:auto}
-    .brand .name{font-weight:750;letter-spacing:.3px}
-    nav{display:flex;gap:16px;color:var(--muted);font-size:15px}
-    nav a:hover,.inlineLink:hover{text-decoration:underline;text-underline-offset:3px}
-    .hero,.card{border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border-radius:28px}
-    .hero{padding:34px 28px}
-    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
-    h1{margin:12px 0 12px;font-size:clamp(38px,6vw,70px);line-height:.95;letter-spacing:-.05em}
-    .sub{max-width:760px;margin:0;color:var(--muted);font-size:clamp(18px,2.2vw,24px)}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:15px;border:1px solid var(--border);background:rgba(255,255,255,.035);color:var(--text);font-weight:800;letter-spacing:.2px}
-    .btnPrimary{border-color:rgba(216,30,30,.62);background:linear-gradient(180deg,rgba(216,30,30,.26),rgba(216,30,30,.11))}
-    .section{margin-top:28px}
-    .mailFallback{
-      display:none;
-      margin-top:16px;
-      padding:14px 16px;
-      border:1px solid rgba(216,30,30,.28);
-      border-radius:18px;
-      background:rgba(216,30,30,.08);
-      color:var(--muted)
-    }
-    .mailFallback.show{display:block}
-    .mailFallback strong{color:var(--text)}
-    .mailRow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .mailValue{
-      display:inline-flex;
-      align-items:center;
-      min-height:42px;
-      padding:10px 12px;
-      border:1px solid var(--border);
-      border-radius:14px;
-      background:rgba(255,255,255,.035);
-      color:var(--text);
-      font-weight:700
-    }
-    .copyBtn{
-      cursor:pointer;
-      min-height:42px;
-      padding:10px 14px;
-      border-radius:14px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.035);
-      color:var(--text);
-      font-weight:700
-    }
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .card{padding:22px}
-    .card h2{margin:0 0 10px;font-size:26px;letter-spacing:-.03em}
-    .card p{margin:0 0 12px;color:var(--muted)}
-    .meta{display:grid;gap:8px;color:var(--muted);font-size:15px}
-    .meta strong{color:var(--text)}
-    .note{margin-top:16px;border-left:2px solid rgba(216,30,30,.62);padding-left:12px;color:var(--muted)}
-    .footer{display:flex;justify-content:space-between;gap:16px;align-items:center;color:var(--muted);font-size:13px;padding-top:28px}
-    .footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
-    @media (max-width: 860px){
-      nav{width:100%;justify-content:flex-start;flex-wrap:wrap}
-      header,.footer{flex-direction:column;align-items:flex-start}
-      .grid{grid-template-columns:1fr}
-      body::before{background-size:min(82vw, 420px) auto;opacity:.04}
-      .hero{padding:28px 20px}
-      .card{padding:18px}
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/site.css" />
 </head>
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="/" aria-label="Trustware Technologies home">
-        <img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" />
-        <span class="name">Trustware Technologies</span>
-      </a>
+      <a class="brand" href="/"><img src="/assets/logo/trustware-logo.png" alt="Trustware Technologies logo" /><span>Trustware Technologies</span></a>
       <nav>
-        <a href="/about/">About</a>
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/work/">Work</a>
         <a href="/devvault/">DevVault</a>
-        <a href="/faq/">FAQ</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-        <a href="/contact/">Contact</a>
+        <a href="/about/">About</a>
+        <a class="active" href="/contact/">Contact</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <div class="eyebrow">Trustware Technologies &bull; Contact</div>
-        <h1>Talk to the right team.</h1>
-        <p class="sub">Use this page to reach Trustware Technologies for company, product, support, licensing, or privacy inquiries. DevVault is our current product, and sales can route broader conversations from there.</p>
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="mailto:sales@trustware.dev?subject=DevVault%20Sales%20Inquiry" data-mailto="sales">Email sales</a>
-          <a class="btn" href="/devvault/">Review DevVault plans</a>
-        </div>
-        <div class="mailFallback" id="salesFallback">
-          <strong>Email fallback</strong>
-          <div>If your browser does not open a mail app, copy the sales address below.</div>
-          <div class="mailRow">
-            <div class="mailValue" id="salesEmailValue">sales@trustware.dev</div>
-            <button class="copyBtn" type="button" id="copySalesEmail">Copy email</button>
-          </div>
+        <div class="kicker">Contact</div>
+        <h1>Send your request and I’ll scope the build.</h1>
+        <p class="sub">Email <a href="mailto:founder@trustware.dev" style="text-decoration:underline;text-underline-offset:2px;">founder@trustware.dev</a>. I can help with a rough idea, a broken workflow, a client request, a small tool build, or an agency overflow task.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:founder@trustware.dev?subject=Build%20Request%20-%20Trustware%20Technologies">Request a Build Quote</a>
         </div>
       </section>
 
-      <section class="section">
-        <div class="grid">
-          <article class="card">
-            <h2>Sales</h2>
-            <p>Use sales for company inquiries, product fit, plan selection, seat counts, Business NAS readiness, procurement, and launch timing questions.</p>
-            <div class="meta">
-              <div><strong>Email:</strong> <a class="inlineLink" href="mailto:sales@trustware.dev?subject=DevVault%20Sales%20Inquiry">sales@trustware.dev</a></div>
-              <div><strong>Best for:</strong> Core, Pro, Business, quote questions, and environment fit.</div>
-            </div>
-          </article>
+      <section class="section panel contact-block">
+        <h2>What to send</h2>
+        <ul class="list">
+          <li>A rough idea</li>
+          <li>A broken workflow</li>
+          <li>A client request</li>
+          <li>A small tool you need built</li>
+          <li>An agency overflow task</li>
+        </ul>
 
-          <article class="card">
-            <h2>Support</h2>
-            <p>Use support for product help, license delivery follow-up, install issues, or customer troubleshooting.</p>
-            <div class="meta">
-              <div><strong>Email:</strong> <a class="inlineLink" href="mailto:support@trustware.dev?subject=DevVault%20Support">support@trustware.dev</a></div>
-              <div><strong>Best for:</strong> Existing customers and technical help.</div>
-            </div>
-          </article>
-
-          <article class="card">
-            <h2>Licensing</h2>
-            <p>Use licensing for signed `.dvlic` delivery questions, entitlement issues, or provisioning coordination.</p>
-            <div class="meta">
-              <div><strong>Email:</strong> <a class="inlineLink" href="mailto:licensing@trustware.dev?subject=DevVault%20Licensing">licensing@trustware.dev</a></div>
-              <div><strong>Best for:</strong> Contract-linked entitlement and delivery workflows.</div>
-            </div>
-          </article>
-
-          <article class="card">
-            <h2>Privacy</h2>
-            <p>Use privacy for data handling questions or policy requests related to trustware.dev.</p>
-            <div class="meta">
-              <div><strong>Email:</strong> <a class="inlineLink" href="mailto:privacy@trustware.dev?subject=Privacy%20Question">privacy@trustware.dev</a></div>
-              <div><strong>Best for:</strong> Privacy notices, policy questions, and site data concerns.</div>
-            </div>
-          </article>
-        </div>
+        <h3 style="margin-top:16px;">Checklist to include in your email</h3>
+        <ul class="checklist">
+          <li>Business/client type</li>
+          <li>What needs built or fixed</li>
+          <li>Deadline</li>
+          <li>Examples/screenshots if available</li>
+          <li>Budget range if known</li>
+        </ul>
       </section>
 
       <section class="section">
-        <div class="card">
-          <h2>What to include</h2>
-          <p>To help us respond faster, include your company or team name, what you are contacting Trustware about, the DevVault tier if relevant, approximate seat count if relevant, and whether you need NAS/network-share deployment.</p>
-          <p class="note">Business deployments require a customer-managed NAS, SMB UNC path, mapped drive, or equivalent network share target before protected backup can run.</p>
+        <div class="card span-12">
+          <h3>Good fit for this lane</h3>
+          <p>Fast web previews, practical website fixes, small dashboards, internal utilities, and repeatable automations for lean teams.</p>
         </div>
       </section>
     </main>
 
     <div class="footer">
-      <div>&copy; <span id="y"></span> Trustware Technologies &bull; TSW Technologies LLC</div>
-      <div>
-        <a href="/about/">About</a> &middot;
-        <a href="/faq/">FAQ</a> &middot;
-        <a href="/contact/">Contact</a> &middot;
-        <a href="/privacy/">Privacy</a> &middot;
-        <a href="/terms/">Terms</a>
-      </div>
+      <div>© <span id="y"></span> Trustware Technologies • TSW Technologies LLC</div>
+      <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
     </div>
   </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-    const salesFallback = document.getElementById("salesFallback");
-    const copySalesEmail = document.getElementById("copySalesEmail");
-    const salesEmailValue = document.getElementById("salesEmailValue");
-
-    for (const link of document.querySelectorAll('a[href^="mailto:"]')) {
-      link.addEventListener("click", (event) => {
-        const href = link.getAttribute("href");
-        if (!href) {
-          return;
-        }
-
-        event.preventDefault();
-        if (link.dataset.mailto === "sales" && salesFallback) {
-          salesFallback.classList.add("show");
-        }
-        window.location.href = href;
-      });
-    }
-
-    if (copySalesEmail && salesEmailValue) {
-      copySalesEmail.addEventListener("click", async () => {
-        const email = salesEmailValue.textContent?.trim() || "sales@trustware.dev";
-        try {
-          await navigator.clipboard.writeText(email);
-          copySalesEmail.textContent = "Copied";
-        } catch {
-          copySalesEmail.textContent = email;
-        }
-      });
-    }
-  </script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
